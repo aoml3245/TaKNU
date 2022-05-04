@@ -14,6 +14,12 @@
 		F357747228192860002FBCDA /* takeConfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F357747128192860002FBCDA /* takeConfView.swift */; };
 		F357747428192DBE002FBCDA /* overdueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F357747328192DBE002FBCDA /* overdueView.swift */; };
 		F357747628192EA6002FBCDA /* settingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F357747528192EA6002FBCDA /* settingView.swift */; };
+		F3D29C5828226207007F5070 /* AdministerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D29C5728226207007F5070 /* AdministerView.swift */; };
+		F3D29C5A2822620D007F5070 /* CheckOverdueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D29C592822620D007F5070 /* CheckOverdueView.swift */; };
+		F3D29C5C28226215007F5070 /* RenderListVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D29C5B28226215007F5070 /* RenderListVIew.swift */; };
+		F3D29C5E2822621D007F5070 /* UserManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D29C5D2822621D007F5070 /* UserManage.swift */; };
+		F3D29C6228226231007F5070 /* returnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D29C6128226231007F5070 /* returnView.swift */; };
+		F3D29C6428226237007F5070 /* menuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D29C6328226237007F5070 /* menuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +31,12 @@
 		F357747128192860002FBCDA /* takeConfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = takeConfView.swift; sourceTree = "<group>"; };
 		F357747328192DBE002FBCDA /* overdueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = overdueView.swift; sourceTree = "<group>"; };
 		F357747528192EA6002FBCDA /* settingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingView.swift; sourceTree = "<group>"; };
+		F3D29C5728226207007F5070 /* AdministerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdministerView.swift; sourceTree = "<group>"; };
+		F3D29C592822620D007F5070 /* CheckOverdueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOverdueView.swift; sourceTree = "<group>"; };
+		F3D29C5B28226215007F5070 /* RenderListVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderListVIew.swift; sourceTree = "<group>"; };
+		F3D29C5D2822621D007F5070 /* UserManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManage.swift; sourceTree = "<group>"; };
+		F3D29C6128226231007F5070 /* returnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = returnView.swift; sourceTree = "<group>"; };
+		F3D29C6328226237007F5070 /* menuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +74,12 @@
 				F357747128192860002FBCDA /* takeConfView.swift */,
 				F357747328192DBE002FBCDA /* overdueView.swift */,
 				F357747528192EA6002FBCDA /* settingView.swift */,
+				F3D29C5728226207007F5070 /* AdministerView.swift */,
+				F3D29C592822620D007F5070 /* CheckOverdueView.swift */,
+				F3D29C5B28226215007F5070 /* RenderListVIew.swift */,
+				F3D29C5D2822621D007F5070 /* UserManage.swift */,
+				F3D29C6128226231007F5070 /* returnView.swift */,
+				F3D29C6328226237007F5070 /* menuView.swift */,
 				F357746728192833002FBCDA /* Assets.xcassets */,
 				F357746928192833002FBCDA /* Preview Content */,
 			);
@@ -148,8 +166,14 @@
 			files = (
 				F357747228192860002FBCDA /* takeConfView.swift in Sources */,
 				F357747628192EA6002FBCDA /* settingView.swift in Sources */,
+				F3D29C6228226231007F5070 /* returnView.swift in Sources */,
+				F3D29C5828226207007F5070 /* AdministerView.swift in Sources */,
+				F3D29C5A2822620D007F5070 /* CheckOverdueView.swift in Sources */,
 				F357747428192DBE002FBCDA /* overdueView.swift in Sources */,
 				F357746628192832002FBCDA /* ContentView.swift in Sources */,
+				F3D29C5E2822621D007F5070 /* UserManage.swift in Sources */,
+				F3D29C6428226237007F5070 /* menuView.swift in Sources */,
+				F3D29C5C28226215007F5070 /* RenderListVIew.swift in Sources */,
 				F357746428192832002FBCDA /* TaKNUApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
