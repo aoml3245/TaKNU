@@ -22,7 +22,7 @@ struct overdueView: View {
             }
             
             List{
-                overdueRecord(thing: "대여 뭄품", takeTime: Date(), returnTime: Date())
+                overdueRecord(thing: "대여 뭄품ㅇ", takeTime: Date(), returnTime: Date())
                 overdueRecord(thing: "대여 뭄품", takeTime: Date(), returnTime: Date())
                 overdueRecord(thing: "대여 뭄품", takeTime: Date(), returnTime: Date())
                 overdueRecord(thing: "대여 뭄품", takeTime: Date(), returnTime: Date())
