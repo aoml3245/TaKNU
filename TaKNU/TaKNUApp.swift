@@ -11,7 +11,7 @@ import SwiftUI
 struct TaKNUApp: App {
     var body: some Scene {
         WindowGroup {
-            settingView()
+            ContentView()
         }
     }
 }
