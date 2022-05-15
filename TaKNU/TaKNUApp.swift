@@ -11,7 +11,8 @@ import SwiftUI
 struct TaKNUApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            tabView(tabIndex: .home)
         }
     }
 }

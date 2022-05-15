@@ -10,27 +10,18 @@ import SwiftUI
 struct RenderListView: View {
     var body: some View {
         VStack{
-            HStack{
-                Button(action: {
-                    // action
-                }) {
-                    Text("< Back")
-                        .padding(10)
-                        .background(Color.orange)
-                }
-                Spacer()
-                Text("연체 기록")
-                    .padding(10)
-                    .background(Color.blue)
-                Spacer()
-            }
-            .background(Color.red)
-            Spacer()
             List{
                 UserRecord(name: "김재홍", grade: 3, major: "컴퓨터공학")
                 UserRecord(name: "부반손", grade: 3, major: "컴퓨터공학")
                 UserRecord(name: "박상원", grade: 3, major: "전자공학")
                 UserRecord(name: "서명원", grade: 3, major: "컴퓨터공학")
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("연체 기록")
+                    .font(.system(size: 20, weight: .semibold))
+                    .accessibilityAddTraits(.isHeader)
             }
         }
     }
