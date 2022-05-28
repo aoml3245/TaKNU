@@ -113,14 +113,42 @@ struct testView: View {
             });
         })
     }
-    func removeItem(){
+    func removeItem(groupname: String, itemname:String){
         //대여 물품 삭제
+        self.ref.child("Groups/\(groupname)").observeSingleEvent(of: .value, with: { snapshot in
+            ref.child("Groups").getData(completion:  { error, snapshot in
+                let value = snapshot.value as? NSDictionary
+                let key = value?[groupname] as? String
+                self.ref.child("Groups/\(key!)/thinglist/\(itemname)").removeValue()
+            });
+        })
     }
     func getPersonalRecord(){
         //개인의 대여기록 확인
     }
     func getItemRecord(){
         //물품의 대여기록 확인
+    }
+    func showItems(){
+        //대여 가능 물품 보기
+    }
+    func showItem(){
+        //물품 하나에 대한 상태 보기
+    }
+    func showUser(){
+        //유저 목록 보기
+    }
+    func showRegitUser(){
+        //등록 신청 중인 대기자 목록 보기
+    }
+    func getUserData(){
+        //유저 데이터 가져오기
+    }
+    func limitUser(){
+        //사용자 제재
+    }
+    func resign(){
+        //사용자 탈퇴
     }
     func takeItem(){
         //물품 대여
@@ -147,7 +175,7 @@ struct testView: View {
         //사용자 요청 불허락
     }
     func userRemove(){
-        //사용자 삭제
+        //그룹 내 사용자 삭제
     }
     
 }
