@@ -17,6 +17,8 @@ struct testView: View {
     @State var name = ""
     @State var groupname = ""
     
+    @State var itemname = ""
+    
     var body: some View {
         VStack {
               TextField("Email", text: $email)
@@ -24,10 +26,13 @@ struct testView: View {
               Button(action: { login() }) {
                   Text("Sign in")
               }
+            Button(action: {signUp( emailAddress: email, password: password) }) {
+                            Text("Register")
+                        }
           }
           .padding()
-        TextField("name", text: $name)
-        TextField("groupname", text: $groupname)
+        TextField("사용자 이름", text: $name)
+        TextField("그룹의 이름", text: $groupname)
         
         Button(action: {
             regitUser(uid: uid!, name: name, email: email)
@@ -43,8 +48,26 @@ struct testView: View {
             Text("registar group")
         }
         
+        TextField("그룹의 이름", text: $groupname)
+        TextField("등록할 물품 이름", text: $itemname)
+        Button(action: {
+            regitItem(groupname: groupname, itemname: itemname)
+            
+        }) {
+            Text("물품 등록")
+        }
+        Button(action: {
+            removeItem(groupname: groupname, itemname: itemname)
+            
+        }) {
+            Text("물품 삭제")
+        }
+        
     }
     
+    func signUp(emailAddress: String, password: String) {
+            Auth.auth().createUser(withEmail: emailAddress, password: password)
+        }
     
     func login() {
             Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
