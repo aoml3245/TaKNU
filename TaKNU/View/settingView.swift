@@ -11,17 +11,6 @@ struct settingView: View {
     @State var alarmState: Bool = true
     var body: some View {
         VStack{
-            HStack{
-                Button(action: {
-                    // action
-                }) {
-                    Text("뒤로 가기")
-                }
-                Spacer()
-                Text("설정")
-                Spacer()
-            }
-            
             List{
                 Toggle(isOn: $alarmState, label: {
                                 Text("알람")
@@ -42,6 +31,14 @@ struct settingView: View {
                 })
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("설정")
+                    .font(.system(size: 20, weight: .semibold))
+                    .accessibilityAddTraits(.isHeader)
+            }
+        }
+        
     }
 }
 
