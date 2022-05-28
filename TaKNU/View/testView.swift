@@ -153,19 +153,35 @@ struct testView: View {
         //물품의 대여기록 확인
     }
     func showItems(){
-        //대여 가능 물품 보기
+        var ret : NSEnumerator?
+        self.ref.child("Groups/\(groupname)/thinglist").observeSingleEvent(of: .value, with: { snapshot in
+            ret =  snapshot.children
+        })
+        return ret!
     }
     func showItem(){
         //물품 하나에 대한 상태 보기
     }
-    func showUser(){
-        //유저 목록 보기
+    func showUser(groupname:String) -> NSEnumerator{
+        var ret : NSEnumerator?
+        self.ref.child("Groups/\(groupname)/userlist").observeSingleEvent(of: .value, with: { snapshot in
+            ret =  snapshot.children
+        })
+        return ret!
     }
-    func showRegitUser(){
-        //등록 신청 중인 대기자 목록 보기
+    func showRegitUser(groupname:String) -> NSEnumerator {
+        var ret : NSEnumerator?
+        self.ref.child("Groups/\(groupname)/regitlist").observeSingleEvent(of: .value, with: { snapshot in
+            ret =  snapshot.children
+        })
+        return ret!
     }
     func getUserData(){
-        //유저 데이터 가져오기
+        var ret : NSEnumerator?
+        self.ref.child("Groups/\(groupname)/regitlist").observeSingleEvent(of: .value, with: { snapshot in
+            ret =  snapshot.children
+        })
+        return ret!
     }
     func limitUser(){
         //사용자 제재
