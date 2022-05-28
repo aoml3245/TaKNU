@@ -16,7 +16,6 @@ struct testView: View {
     
     @State var name = ""
     @State var groupname = ""
-    
     @State var itemname = ""
     
     var body: some View {
@@ -122,7 +121,7 @@ struct testView: View {
                 });
                 
             }
-            self.ref.child("Users/\(uid)/group/\(groupname)").setValue(true)
+            self.ref.child("Users/\(uid)/group/").setValue(groupname)
         })
         return ret
     }
@@ -152,7 +151,7 @@ struct testView: View {
     func getItemRecord(){
         //물품의 대여기록 확인
     }
-    func showItems(){
+    func showItems() -> NSEnumerator {
         var ret : NSEnumerator?
         self.ref.child("Groups/\(groupname)/thinglist").observeSingleEvent(of: .value, with: { snapshot in
             ret =  snapshot.children
@@ -163,6 +162,7 @@ struct testView: View {
         //물품 하나에 대한 상태 보기
     }
     func showUser(groupname:String) -> NSEnumerator{
+        // 그룹의 허용된 사용자
         var ret : NSEnumerator?
         self.ref.child("Groups/\(groupname)/userlist").observeSingleEvent(of: .value, with: { snapshot in
             ret =  snapshot.children
@@ -170,23 +170,22 @@ struct testView: View {
         return ret!
     }
     func showRegitUser(groupname:String) -> NSEnumerator {
+        // 그룹에 들어오고 싶어하는 사용자
         var ret : NSEnumerator?
         self.ref.child("Groups/\(groupname)/regitlist").observeSingleEvent(of: .value, with: { snapshot in
             ret =  snapshot.children
         })
         return ret!
     }
-    func getUserData(){
+    func getUserData(uid:String) -> NSEnumerator {
+        // 사용자 개인의 데이터
         var ret : NSEnumerator?
-        self.ref.child("Groups/\(groupname)/regitlist").observeSingleEvent(of: .value, with: { snapshot in
+        self.ref.child("User/\(uid)").observeSingleEvent(of: .value, with: { snapshot in
             ret =  snapshot.children
         })
         return ret!
     }
-    func limitUser(){
-        //사용자 제재
-    }
-    func resign(){
+    func resign(uid: String){
         //사용자 탈퇴
     }
     func takeItem(){
@@ -201,11 +200,40 @@ struct testView: View {
         //Group의 데이터도 업데이트해줘야함
         //record도 기록해야함
     }
-    func getPersonalOverdueRecord(){
+    func getPersonalOverdueRecord(uid:String) -> NSEnumerator {
         //개인 연체 기록
+        var ret : NSEnumerator?
+        self.ref.child("Users/\(uid)/takerecord").observeSingleEvent(of: .value, with: { snapshot in
+            ret =  snapshot.children
+        })
+        return ret!
     }
-    func getItemOverdueRecord(){
+    func getItemOverdueRecord() -> NSEnumerator {
         //물품 연체 기록
+        var ret : NSEnumerator?
+        self.ref.child("Groups/\(uid)/takerecord").observeSingleEvent(of: .value, with: { snapshot in
+            ret =  snapshot.children
+        })
+        return ret!
+    }
+    func getGroupId(groupname:String) -> String{
+        //그룹의 아이디 가져오기
+        var id : String?
+        self.ref.child("Groups/").observeSingleEvent(of: .value, with: { snapshot in
+                let value = snapshot.value as? NSDictionary
+                id = value?[groupname] as? String
+        })
+        
+        return id!
+    }
+    func getUserGroupName(uid: String) -> String{
+        //유저가 속해있는 그룹의 이름
+        var name : String?
+        self.ref.child("User/\(uid)").observeSingleEvent(of: .value, with: { snapshot in
+                let value = snapshot.value as? NSDictionary
+                name = value?["group"] as? String
+        })
+        return name!
     }
     func userAccept(){
         //사용자 요청 허용
