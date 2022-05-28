@@ -16,6 +16,7 @@ struct tabView: View{
     @State var returnDate: Date = Date()
     @State var rentItem: String = ""
     
+    
     func changeMyView(tabIndex: TabIndex) -> some View{
         switch tabIndex {
         case .home:

@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct TaKNUApp: App {
+    init() {
+        FirebaseApp.configure() // 코드 추가
+    }
     var body: some Scene {
         WindowGroup {
             //ContentView()
-            tabView(tabIndex: .home)
+            testView()
         }
     }
 }

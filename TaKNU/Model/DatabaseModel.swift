@@ -9,46 +9,22 @@ import Foundation
 import FirebaseAuth
 import FirebaseDatabase
 
-class DatabaseModel{
-    var ref:DatabaseReference!
-    
-    private lazy var databasePath: DatabaseReference? = {
+class DatabaseModel: ObservableObject{
+    lazy var databasePath: DatabaseReference? = {
       // 1
       guard let uid = Auth.auth().currentUser?.uid else {
         return nil
       }
 
       // 2
-    let ref = Database.database()
+      let ref = Database.database()
         .reference()
-        self.ref = ref
+        .child("users/\(uid)/thoughts")
       return ref
     }()
     
     private let encoder = JSONEncoder()
-    
-    private let decoder = JSONDecoder()
-    
-    private func registerUser(){
-        
-    }
-    private func addItem(){
-        
-    }
-    private func deleteItem(){
-        
-    }
-    private func takeItem(){
-        
-    }
-    private func returnItem(){
-        
-    }
-    private func getOverdue(){
-        
-    }
-    private func getTakeRecord(){
-        
-    }
-    
 }
+
+
+
