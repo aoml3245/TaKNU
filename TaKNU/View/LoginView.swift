@@ -59,7 +59,7 @@ struct LoginView: View {
             }
 
             Button {
-                viewModel.login(withEmail: 이메일, password: 비밀번호)
+                login(email: 이메일, password: 비밀번호)
             } label: {
                 Text("TaKNU 로그인")
                 .font(.subheadline)
@@ -93,6 +93,16 @@ struct LoginView: View {
         .ignoresSafeArea() // căn góc tròn
         .navigationBarHidden(true)
     }
+    
+    func login(email: String, password: String) {
+            Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+                if error != nil {
+                    print(error?.localizedDescription ?? "")
+                } else {
+                    print("success")
+                }
+            }
+        }
 }
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {

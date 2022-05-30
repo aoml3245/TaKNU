@@ -148,6 +148,7 @@ struct showTestView: View {
         var ret : NSEnumerator?
         self.ref.child("User/\(uid)").observeSingleEvent(of: .value, with: { snapshot in
             ret =  snapshot.children
+            
         })
         return ret!
     }

@@ -16,7 +16,7 @@ struct TaKNUApp: App {
     var body: some Scene {
         WindowGroup {
             //ContentView()
-            showTestView()
+            LoginView()
         }
     }
 }
