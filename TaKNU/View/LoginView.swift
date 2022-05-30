@@ -97,10 +97,13 @@ struct LoginView: View {
     func login(email: String, password: String) {
             Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
                 if error != nil {
-                    print(error?.localizedDescription ?? "")
+                    print("error")
+                    //확인해 달라는 팝업 메세지
                 } else {
-                    print("success")
+                    print("sucess")
+                    //화면 전환 함수
                 }
+                
             }
         }
 }
