@@ -28,6 +28,12 @@
 		F32C72E12830E0130070AA27 /* UserManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C72D02830E0130070AA27 /* UserManage.swift */; };
 		F32C72E22830E0130070AA27 /* RenderListVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C72D12830E0130070AA27 /* RenderListVIew.swift */; };
 		F32C72E42830F63A0070AA27 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C72E32830F63A0070AA27 /* testView.swift */; };
+		F33EF6892844CFAB00B38557 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EF6872844CFAB00B38557 /* LoginView.swift */; };
+		F33EF68A2844CFAB00B38557 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EF6882844CFAB00B38557 /* RegistrationView.swift */; };
+		F33EF68C2844CFED00B38557 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EF68B2844CFED00B38557 /* MainTabView.swift */; };
+		F33EF68E2844D02300B38557 /* RoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EF68D2844D02300B38557 /* RoundedShape.swift */; };
+		F33EF6902844D06400B38557 /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EF68F2844D06400B38557 /* CustomInputField.swift */; };
+		F33EF6922844D19A00B38557 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EF6912844D19A00B38557 /* AuthViewModel.swift */; };
 		F357746828192833002FBCDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F357746728192833002FBCDA /* Assets.xcassets */; };
 		F357746B28192833002FBCDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F357746A28192833002FBCDA /* Preview Assets.xcassets */; };
 		F38DF98A28425D8700692E83 /* showtestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38DF98928425D8700692E83 /* showtestView.swift */; };
@@ -79,6 +85,12 @@
 		F32C72D02830E0130070AA27 /* UserManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManage.swift; sourceTree = "<group>"; };
 		F32C72D12830E0130070AA27 /* RenderListVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderListVIew.swift; sourceTree = "<group>"; };
 		F32C72E32830F63A0070AA27 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
+		F33EF6872844CFAB00B38557 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F33EF6882844CFAB00B38557 /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		F33EF68B2844CFED00B38557 /* MainTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		F33EF68D2844D02300B38557 /* RoundedShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedShape.swift; sourceTree = "<group>"; };
+		F33EF68F2844D06400B38557 /* CustomInputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
+		F33EF6912844D19A00B38557 /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		F357746028192832002FBCDA /* TaKNU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaKNU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F357746728192833002FBCDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F357746A28192833002FBCDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -123,6 +135,11 @@
 		F3279A382828DD090067A153 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F33EF68F2844D06400B38557 /* CustomInputField.swift */,
+				F33EF68D2844D02300B38557 /* RoundedShape.swift */,
+				F33EF68B2844CFED00B38557 /* MainTabView.swift */,
+				F33EF6872844CFAB00B38557 /* LoginView.swift */,
+				F33EF6882844CFAB00B38557 /* RegistrationView.swift */,
 				F32C72C12830E0130070AA27 /* AdministerView.swift */,
 				F32C72CE2830E0130070AA27 /* checkboxView.swift */,
 				F32C72CA2830E0130070AA27 /* CheckOverdueView.swift */,
@@ -151,6 +168,7 @@
 			children = (
 				F3279A362828DC5E0067A153 /* DatabaseModel.swift */,
 				F3279A3B2828DD6A0067A153 /* AuthenticationModel.swift */,
+				F33EF6912844D19A00B38557 /* AuthViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -295,8 +313,10 @@
 				F32C72E02830E0130070AA27 /* rentedBox.swift in Sources */,
 				F32C72DC2830E0130070AA27 /* menuView.swift in Sources */,
 				F32C72DB2830E0130070AA27 /* CheckOverdueView.swift in Sources */,
+				F33EF6892844CFAB00B38557 /* LoginView.swift in Sources */,
 				F3279A372828DC5E0067A153 /* DatabaseModel.swift in Sources */,
 				F32C72D42830E0130070AA27 /* ContentView.swift in Sources */,
+				F33EF68E2844D02300B38557 /* RoundedShape.swift in Sources */,
 				F32C72DF2830E0130070AA27 /* checkboxView.swift in Sources */,
 				F32C72D22830E0130070AA27 /* AdministerView.swift in Sources */,
 				F32C72E42830F63A0070AA27 /* testView.swift in Sources */,
@@ -305,11 +325,15 @@
 				F32C72DA2830E0130070AA27 /* currentRentStateView.swift in Sources */,
 				F32C72E22830E0130070AA27 /* RenderListVIew.swift in Sources */,
 				F32C72D52830E0130070AA27 /* overdueView.swift in Sources */,
+				F33EF6902844D06400B38557 /* CustomInputField.swift in Sources */,
+				F33EF68A2844CFAB00B38557 /* RegistrationView.swift in Sources */,
 				F3279A3C2828DD6A0067A153 /* AuthenticationModel.swift in Sources */,
 				F32C72DE2830E0130070AA27 /* tabView.swift in Sources */,
 				F32C72E12830E0130070AA27 /* UserManage.swift in Sources */,
+				F33EF68C2844CFED00B38557 /* MainTabView.swift in Sources */,
 				F32C72D32830E0130070AA27 /* rentView.swift in Sources */,
 				F32C72D82830E0130070AA27 /* returnModalView.swift in Sources */,
+				F33EF6922844D19A00B38557 /* AuthViewModel.swift in Sources */,
 				F32C72D92830E0130070AA27 /* settingView.swift in Sources */,
 				F32C72DD2830E0130070AA27 /* MySettingView.swift in Sources */,
 				F32C72D72830E0130070AA27 /* rentItemImage.swift in Sources */,

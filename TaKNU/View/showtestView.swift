@@ -20,10 +20,10 @@ struct showTestView: View {
     
     var body: some View {
         VStack {
-            
-            for item in (record){
-                
-            }
+//
+//            for item in (record){
+//
+//            }
           }
           .padding()
         
