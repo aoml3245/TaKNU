@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F3279A372828DC5E0067A153 /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3279A362828DC5E0067A153 /* DatabaseModel.swift */; };
 		F3279A3C2828DD6A0067A153 /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3279A3B2828DD6A0067A153 /* AuthenticationModel.swift */; };
 		F32C72C02830DFF70070AA27 /* TaKNUApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C72BF2830DFF70070AA27 /* TaKNUApp.swift */; };
 		F32C72D22830E0130070AA27 /* AdministerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C72C12830E0130070AA27 /* AdministerView.swift */; };
@@ -62,7 +61,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F3279A362828DC5E0067A153 /* DatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
 		F3279A3B2828DD6A0067A153 /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
 		F32C72BF2830DFF70070AA27 /* TaKNUApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaKNUApp.swift; sourceTree = "<group>"; };
 		F32C72C12830E0130070AA27 /* AdministerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdministerView.swift; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 		F3279A3A2828DD460067A153 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F3279A362828DC5E0067A153 /* DatabaseModel.swift */,
 				F3279A3B2828DD6A0067A153 /* AuthenticationModel.swift */,
 			);
 			path = Model;
@@ -324,7 +321,6 @@
 				F32C72DC2830E0130070AA27 /* menuView.swift in Sources */,
 				F32C72DB2830E0130070AA27 /* CheckOverdueView.swift in Sources */,
 				F33EF6892844CFAB00B38557 /* LoginView.swift in Sources */,
-				F3279A372828DC5E0067A153 /* DatabaseModel.swift in Sources */,
 				F32C72D42830E0130070AA27 /* ContentView.swift in Sources */,
 				F33EF68E2844D02300B38557 /* RoundedShape.swift in Sources */,
 				F32C72DF2830E0130070AA27 /* checkboxView.swift in Sources */,
