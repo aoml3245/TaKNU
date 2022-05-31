@@ -11,7 +11,6 @@ import Firebase
 struct LoginView: View {
     @State private var 이메일 = ""
     @State private var 비밀번호 = ""
-    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         // parent container
@@ -33,31 +32,9 @@ struct LoginView: View {
             .padding(.top, 33)
             HStack {  // bat buoc phai co moi hien
              //  Button {
-                   NavigationLink {
-                        Text("한국어, 영어, 베트남어")
-                    } label: {
-                         Text("언어 설정")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color(.systemRed))
-                            .padding(.top)
-                            .padding(.trailing, 24)
-                }
-        }
-            HStack{
-                Spacer()
-                NavigationLink {
-                   Text("비밀번호 찾기")
-                } label: {
-                    Text("이메일/비밀번호 찾기")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
-                        .foregroundColor(Color(.systemRed))
-                        .padding(.top)
-                        .padding(.trailing, 23)
-                }
+                   
             }
-
+            Spacer(minLength: 40)
             Button {
                 login(email: 이메일, password: 비밀번호)
             } label: {

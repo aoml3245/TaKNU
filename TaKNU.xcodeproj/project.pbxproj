@@ -33,10 +33,8 @@
 		F33EF68C2844CFED00B38557 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EF68B2844CFED00B38557 /* MainTabView.swift */; };
 		F33EF68E2844D02300B38557 /* RoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EF68D2844D02300B38557 /* RoundedShape.swift */; };
 		F33EF6902844D06400B38557 /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EF68F2844D06400B38557 /* CustomInputField.swift */; };
-		F33EF6922844D19A00B38557 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EF6912844D19A00B38557 /* AuthViewModel.swift */; };
 		F357746828192833002FBCDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F357746728192833002FBCDA /* Assets.xcassets */; };
 		F357746B28192833002FBCDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F357746A28192833002FBCDA /* Preview Assets.xcassets */; };
-		F38DF98A28425D8700692E83 /* showtestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38DF98928425D8700692E83 /* showtestView.swift */; };
 		F3D29C662822679D007F5070 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3D29C652822679D007F5070 /* GoogleService-Info.plist */; };
 		F3D29C692822684B007F5070 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F3D29C682822684B007F5070 /* FirebaseAnalytics */; };
 		F3D29C6B2822684B007F5070 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = F3D29C6A2822684B007F5070 /* FirebaseAnalyticsSwift-Beta */; };
@@ -90,11 +88,9 @@
 		F33EF68B2844CFED00B38557 /* MainTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		F33EF68D2844D02300B38557 /* RoundedShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedShape.swift; sourceTree = "<group>"; };
 		F33EF68F2844D06400B38557 /* CustomInputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
-		F33EF6912844D19A00B38557 /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		F357746028192832002FBCDA /* TaKNU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaKNU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F357746728192833002FBCDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F357746A28192833002FBCDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F38DF98928425D8700692E83 /* showtestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showtestView.swift; sourceTree = "<group>"; };
 		F3D29C652822679D007F5070 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,30 +131,20 @@
 		F3279A382828DD090067A153 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F33EF68F2844D06400B38557 /* CustomInputField.swift */,
-				F33EF68D2844D02300B38557 /* RoundedShape.swift */,
-				F33EF68B2844CFED00B38557 /* MainTabView.swift */,
+				F371BBC42845B3EF008E80E2 /* temp */,
+				F371BBC32845B346008E80E2 /* Component */,
 				F33EF6872844CFAB00B38557 /* LoginView.swift */,
 				F33EF6882844CFAB00B38557 /* RegistrationView.swift */,
 				F32C72C12830E0130070AA27 /* AdministerView.swift */,
-				F32C72CE2830E0130070AA27 /* checkboxView.swift */,
-				F32C72CA2830E0130070AA27 /* CheckOverdueView.swift */,
-				F32C72C32830E0130070AA27 /* ContentView.swift */,
 				F32C72C92830E0130070AA27 /* currentRentStateView.swift */,
 				F32C72CB2830E0130070AA27 /* menuView.swift */,
-				F32C72C52830E0130070AA27 /* itemImage.swift */,
 				F32C72CC2830E0130070AA27 /* MySettingView.swift */,
 				F32C72C42830E0130070AA27 /* overdueView.swift */,
 				F32C72D12830E0130070AA27 /* RenderListVIew.swift */,
-				F32C72CF2830E0130070AA27 /* rentedBox.swift */,
-				F32C72C62830E0130070AA27 /* rentItemImage.swift */,
 				F32C72C22830E0130070AA27 /* rentView.swift */,
 				F32C72C72830E0130070AA27 /* returnModalView.swift */,
 				F32C72C82830E0130070AA27 /* settingView.swift */,
 				F32C72CD2830E0130070AA27 /* tabView.swift */,
-				F32C72D02830E0130070AA27 /* UserManage.swift */,
-				F32C72E32830F63A0070AA27 /* testView.swift */,
-				F38DF98928425D8700692E83 /* showtestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,7 +154,6 @@
 			children = (
 				F3279A362828DC5E0067A153 /* DatabaseModel.swift */,
 				F3279A3B2828DD6A0067A153 /* AuthenticationModel.swift */,
-				F33EF6912844D19A00B38557 /* AuthViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,6 +193,31 @@
 				F357746A28192833002FBCDA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F371BBC32845B346008E80E2 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F32C72CF2830E0130070AA27 /* rentedBox.swift */,
+				F32C72C62830E0130070AA27 /* rentItemImage.swift */,
+				F32C72C52830E0130070AA27 /* itemImage.swift */,
+				F33EF68F2844D06400B38557 /* CustomInputField.swift */,
+				F33EF68D2844D02300B38557 /* RoundedShape.swift */,
+				F33EF68B2844CFED00B38557 /* MainTabView.swift */,
+				F32C72CE2830E0130070AA27 /* checkboxView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		F371BBC42845B3EF008E80E2 /* temp */ = {
+			isa = PBXGroup;
+			children = (
+				F32C72CA2830E0130070AA27 /* CheckOverdueView.swift */,
+				F32C72E32830F63A0070AA27 /* testView.swift */,
+				F32C72D02830E0130070AA27 /* UserManage.swift */,
+				F32C72C32830E0130070AA27 /* ContentView.swift */,
+			);
+			path = temp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,7 +330,6 @@
 				F32C72DF2830E0130070AA27 /* checkboxView.swift in Sources */,
 				F32C72D22830E0130070AA27 /* AdministerView.swift in Sources */,
 				F32C72E42830F63A0070AA27 /* testView.swift in Sources */,
-				F38DF98A28425D8700692E83 /* showtestView.swift in Sources */,
 				F32C72D62830E0130070AA27 /* itemImage.swift in Sources */,
 				F32C72DA2830E0130070AA27 /* currentRentStateView.swift in Sources */,
 				F32C72E22830E0130070AA27 /* RenderListVIew.swift in Sources */,
@@ -333,7 +342,6 @@
 				F33EF68C2844CFED00B38557 /* MainTabView.swift in Sources */,
 				F32C72D32830E0130070AA27 /* rentView.swift in Sources */,
 				F32C72D82830E0130070AA27 /* returnModalView.swift in Sources */,
-				F33EF6922844D19A00B38557 /* AuthViewModel.swift in Sources */,
 				F32C72D92830E0130070AA27 /* settingView.swift in Sources */,
 				F32C72DD2830E0130070AA27 /* MySettingView.swift in Sources */,
 				F32C72D72830E0130070AA27 /* rentItemImage.swift in Sources */,

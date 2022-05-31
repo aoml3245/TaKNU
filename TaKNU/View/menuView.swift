@@ -34,7 +34,7 @@ struct menuView: View{
                 
                 ScrollView{
                     HStack(spacing: 30){
-                        NavigationLink(destination: rentView(rentItem: $rentItemString)){
+                        NavigationLink(destination: rentView(rentItem: rentItemString)){
                             itemImage(imageName: selectedItem(rentItem: .mat))
                         }
                         .simultaneousGesture(TapGesture().onEnded{
@@ -42,7 +42,7 @@ struct menuView: View{
                             rentItemString = selectedItem(rentItem: self.rentItem)
                         })
                         
-                        NavigationLink(destination: rentView(rentItem: $rentItemString)){
+                        NavigationLink(destination: rentView(rentItem: rentItemString)){
                             itemImage(imageName: selectedItem(rentItem: .charger))
                         }
                         .simultaneousGesture(TapGesture().onEnded{
@@ -51,14 +51,14 @@ struct menuView: View{
                         })
                     }.padding(30)
                     HStack(spacing: 30){
-                        NavigationLink(destination: rentView(rentItem: $rentItemString)){
+                        NavigationLink(destination: rentView(rentItem: rentItemString)){
                             itemImage(imageName: selectedItem(rentItem: .blanket))
                         }
                         .simultaneousGesture(TapGesture().onEnded{
                             self.rentItem = .blanket
                             rentItemString = selectedItem(rentItem: self.rentItem)
                         })
-                        NavigationLink(destination: rentView(rentItem: $rentItemString)){
+                        NavigationLink(destination: rentView(rentItem: rentItemString)){
                             itemImage(imageName: selectedItem(rentItem: .multitab))
                         }
                         .simultaneousGesture(TapGesture().onEnded{

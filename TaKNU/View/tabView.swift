@@ -22,7 +22,7 @@ struct tabView: View{
         case .home:
             return AnyView(menuView(rentItem: .blanket))
         case .rent:
-            return AnyView(currentRentStateView(rentDate: $rentDate, returnDate: $returnDate, rentItem: $rentItem))
+            return AnyView(currentRentStateView(rentDate: rentDate, returnDate: returnDate, rentItem: rentItem))
         case .setting:
             return AnyView(MySettingView())
         }

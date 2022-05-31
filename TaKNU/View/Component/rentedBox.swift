@@ -9,9 +9,9 @@ import SwiftUI
 
 struct rentedBox : View{
     @State private var showModal = false
-    @Binding var rentDate: Date
-    @Binding var returnDate: Date
-    @Binding var rentItem: String
+    @State var rentDate: Date
+    @State var returnDate: Date
+    @State var rentItem: String
 
     func dateFormat() -> DateFormatter{
         let formatter = DateFormatter()

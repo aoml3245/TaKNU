@@ -12,9 +12,9 @@ struct settingView: View {
     var body: some View {
         VStack{
             List{
-                Toggle(isOn: $alarmState, label: {
-                                Text("알람")
-                            })
+//                Toggle(isOn: $alarmState, label: {
+//                                Text("알람")
+//                            })
                 Section(header: Text("계정 설정"), footer: Text(""), content: {
                     Text("사용자명")
                     
@@ -38,6 +38,10 @@ struct settingView: View {
                     .accessibilityAddTraits(.isHeader)
             }
         }
+        
+    }
+    
+    func getUserData(){
         
     }
 }

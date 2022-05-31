@@ -14,7 +14,7 @@ struct rentView: View {
     @State private var isActive: Bool = false
     @State private var returnDate: Date = Date()
     @State var presentAlert: Bool = false
-    @Binding var rentItem : String
+    @State var rentItem : String
     
     var body: some View {
         ScrollView{
@@ -41,7 +41,7 @@ struct rentView: View {
                     checkBoxView(checked: $isChecked)
                         .padding(.bottom, 40)
                     VStack{
-                        NavigationLink(destination: currentRentStateView(rentDate: $selectedDate, returnDate: $returnDate, rentItem: $rentItem), isActive: $isActive)
+                        NavigationLink(destination: currentRentStateView(rentDate: selectedDate, returnDate: returnDate, rentItem: rentItem), isActive: $isActive)
                         {
                             rentButton(isChecked: $isChecked, selectedDate: $selectedDate, shouldAlert: $shouldAlert, returnDate: $returnDate)
                                 .simultaneousGesture(TapGesture().onEnded{
@@ -136,7 +136,7 @@ struct rentView_Previews: PreviewProvider {
         @State var rentItem = "돗자리"
         
         var body: some View {
-            rentView(rentItem: $rentItem)
+            rentView(rentItem: rentItem)
         }
     }
     static var previews: some View {

@@ -11,11 +11,9 @@ import Firebase
 struct RegistrationView: View {
     @State private var email = ""
     @State private var username = ""
-    @State private var fullname = ""
     @State private var password = ""
     
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         VStack {
@@ -31,10 +29,6 @@ struct RegistrationView: View {
                                  text: $username)
                 
                 
-                CustomInputField(imageName: "person",
-                                 placeholderText: "닉넴",
-                                 text: $fullname)
-                
                 CustomInputField(imageName: "lock",
                                  placeholderText: "비밀번호",
                                  isSecureField: true,
@@ -43,10 +37,8 @@ struct RegistrationView: View {
             .padding(32)
             
             Button {
-                viewModel.register(withEmail: email,
-                                   password: password,
-                                   fullname: fullname,
-                                   username: username)
+                signUp(emailAddress: email, password: password)
+                regitUser(name: username, email: email)
             } label: {
                 Text("가입하기")
                     .font(.headline)
@@ -77,6 +69,41 @@ struct RegistrationView: View {
         }
         .ignoresSafeArea()
     }
+    func signUp(emailAddress: String, password: String) {
+        Auth.auth().createUser(withEmail: emailAddress, password: password)
+        login(email: email, password: password)
+    }
+    func regitUser(name: String, email:String) -> Bool{
+        var ret = true
+        let ref: DatabaseReference! = Database.database().reference()
+        let uid = Auth.auth().currentUser?.uid
+        ref.child("Users/\(uid!)").observeSingleEvent(of: .value, with: { snapshot in
+            if(snapshot.exists() == false){
+                // 현재 사용자가 존재하지 않으면 사용자를 만든다.
+                ref.child("Users/\(uid!)/name").setValue(name)
+                ref.child("Users/\(uid!)/email").setValue(email)
+                print("사용자 등록에 성공했습니다.")
+            }
+            else{
+                ret =  false
+                print("사용자가 존재합니다.")
+            }
+        })
+        return ret
+        
+    }
+    func login(email: String, password: String) {
+            Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+                if error != nil {
+                    print("error")
+                    //확인해 달라는 팝업 메세지
+                } else {
+                    print("sucess")
+                    //화면 전환 함수
+                }
+                
+            }
+        }
 }
 
 struct RegistrationView_Previews: PreviewProvider {

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct currentRentStateView: View {
-    @Binding var rentDate : Date
-    @Binding var returnDate: Date
-    @Binding var rentItem : String
+    @State var rentDate : Date
+    @State var returnDate: Date
+    @State var rentItem : String
 
     var body: some View {
         
@@ -24,13 +24,13 @@ struct currentRentStateView: View {
             }
             ScrollView{
                 HStack(alignment: .center){
-                    rentedBox(rentDate: $rentDate, returnDate: $returnDate, rentItem: $rentItem)
-                    rentedBox(rentDate: $rentDate, returnDate: $returnDate, rentItem: $rentItem)
+                    rentedBox(rentDate: rentDate, returnDate: returnDate, rentItem: rentItem)
+                    rentedBox(rentDate: rentDate, returnDate: returnDate, rentItem: rentItem)
                     
                 }
                 HStack{
-                    rentedBox(rentDate: $rentDate, returnDate: $returnDate, rentItem: $rentItem)
-                    rentedBox(rentDate: $rentDate, returnDate: $returnDate, rentItem: $rentItem)
+                    rentedBox(rentDate: rentDate, returnDate: returnDate, rentItem: rentItem)
+                    rentedBox(rentDate: rentDate, returnDate: returnDate, rentItem: rentItem)
                 }
             }
         }
@@ -45,10 +45,14 @@ struct currentRentStateView: View {
         .navigationTitle("")
         
     }
+    
+//    func getRentState(item){
+//
+//    }
 }
 
-//struct currentRentStateView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        currentRentStateView(rentDate: Date(), returnDate: Date(), rentItem: "충전기")
-//    }
-//}
+struct currentRentStateView_Previews: PreviewProvider {
+    static var previews: some View {
+        currentRentStateView(rentDate: Date(), returnDate: Date(), rentItem: "충전기")
+    }
+}
