@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RenderListView: View {
+    @ObservedObject var viewRouter : ViewRouter
     var body: some View {
         VStack{
             List{

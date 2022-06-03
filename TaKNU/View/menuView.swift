@@ -5,6 +5,7 @@ enum RentItem{
 }
 
 struct menuView: View{
+    @ObservedObject var viewRouter : ViewRouter
     @State var rentItem : RentItem = .mat
     @State var rentItemString: String = ""
     

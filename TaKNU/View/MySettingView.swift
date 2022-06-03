@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MySettingView : View{
+    @ObservedObject var viewRouter : ViewRouter
     var body: some View{
         NavigationView{
             VStack(alignment: .leading, spacing: 20){

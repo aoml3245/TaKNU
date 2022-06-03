@@ -58,6 +58,8 @@
 		F3D29C912822684B007F5070 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F3D29C902822684B007F5070 /* FirebaseStorage */; };
 		F3D29C932822684B007F5070 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F3D29C922822684B007F5070 /* FirebaseStorageCombine-Community */; };
 		F3D29C952822684B007F5070 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = F3D29C942822684B007F5070 /* FirebaseStorageSwift-Beta */; };
+		F3EB29062849DC0C007F8055 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB29052849DC0C007F8055 /* ViewRouter.swift */; };
+		F3EB29082849DCA7007F8055 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB29072849DCA7007F8055 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +92,8 @@
 		F357746728192833002FBCDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F357746A28192833002FBCDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3D29C652822679D007F5070 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F3EB29052849DC0C007F8055 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		F3EB29072849DCA7007F8055 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 				F371BBC42845B3EF008E80E2 /* temp */,
 				F371BBC32845B346008E80E2 /* Component */,
 				F33EF6872844CFAB00B38557 /* LoginView.swift */,
+				F3EB29052849DC0C007F8055 /* ViewRouter.swift */,
+				F3EB29072849DCA7007F8055 /* MainView.swift */,
 				F33EF6882844CFAB00B38557 /* RegistrationView.swift */,
 				F32C72C12830E0130070AA27 /* AdministerView.swift */,
 				F32C72C92830E0130070AA27 /* currentRentStateView.swift */,
@@ -319,6 +325,7 @@
 				F32C72C02830DFF70070AA27 /* TaKNUApp.swift in Sources */,
 				F32C72E02830E0130070AA27 /* rentedBox.swift in Sources */,
 				F32C72DC2830E0130070AA27 /* menuView.swift in Sources */,
+				F3EB29062849DC0C007F8055 /* ViewRouter.swift in Sources */,
 				F32C72DB2830E0130070AA27 /* CheckOverdueView.swift in Sources */,
 				F33EF6892844CFAB00B38557 /* LoginView.swift in Sources */,
 				F32C72D42830E0130070AA27 /* ContentView.swift in Sources */,
@@ -334,6 +341,7 @@
 				F33EF68A2844CFAB00B38557 /* RegistrationView.swift in Sources */,
 				F3279A3C2828DD6A0067A153 /* AuthenticationModel.swift in Sources */,
 				F32C72DE2830E0130070AA27 /* tabView.swift in Sources */,
+				F3EB29082849DCA7007F8055 /* MainView.swift in Sources */,
 				F32C72E12830E0130070AA27 /* UserManage.swift in Sources */,
 				F33EF68C2844CFED00B38557 /* MainTabView.swift in Sources */,
 				F32C72D32830E0130070AA27 /* rentView.swift in Sources */,

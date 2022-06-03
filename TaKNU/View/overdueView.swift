@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct overdueView: View {
+    @ObservedObject var viewRouter : ViewRouter
     var body: some View {
         VStack{
             HStack{

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct rentView: View {
+    @ObservedObject var viewRouter : ViewRouter
     @State private var isChecked = false
     @State private var selectedDate = Date()
     @State private var shouldAlert : Bool = false

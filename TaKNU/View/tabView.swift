@@ -11,6 +11,7 @@ enum TabIndex{
 }
 
 struct tabView: View{
+    @ObservedObject var viewRouter : ViewRouter
     @State var tabIndex: TabIndex
     @State var rentDate: Date = Date()
     @State var returnDate: Date = Date()
@@ -88,6 +89,6 @@ struct tabView: View{
 
 struct tabView_Previews: PreviewProvider {
     static var previews: some View {
-        tabView(tabIndex: .home, rentDate: Date(), returnDate: Date(), rentItem: "충전기")
+        tabView(viewRouter: ViewRouter(), tabIndex: .home, rentDate: Date(), returnDate: Date(), rentItem: "충전기")
     }
 }

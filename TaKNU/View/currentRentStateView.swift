@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct currentRentStateView: View {
+    @ObservedObject var viewRouter : ViewRouter
     @State var rentDate : Date
     @State var returnDate: Date
     @State var rentItem : String

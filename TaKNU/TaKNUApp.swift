@@ -15,8 +15,7 @@ struct TaKNUApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            //ContentView()
-            RegistrationView()
+            MainView(viewRouter: ViewRouter())
         }
     }
 }

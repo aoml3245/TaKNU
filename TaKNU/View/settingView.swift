@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct settingView: View {
+    @ObservedObject var viewRouter : ViewRouter
     @State var alarmState: Bool = true
     var body: some View {
         VStack{

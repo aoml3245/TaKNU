@@ -12,6 +12,8 @@ struct LoginView: View {
     @State private var 이메일 = ""
     @State private var 비밀번호 = ""
     
+    @ObservedObject var viewRouter : ViewRouter
+    
     var body: some View {
         // parent container
         VStack {
@@ -78,7 +80,7 @@ struct LoginView: View {
                     //확인해 달라는 팝업 메세지
                 } else {
                     print("sucess")
-                    //화면 전환 함수
+                    self.viewRouter.currentPage = "tabView"
                 }
                 
             }
@@ -86,7 +88,7 @@ struct LoginView: View {
 }
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(viewRouter: ViewRouter())
     }
 }
 

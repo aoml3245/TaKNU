@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct returnModalView: View {
+    @ObservedObject var viewRouter : ViewRouter
     @Environment(\.presentationMode) var presentation
     @State var present: Bool = false
     
