@@ -15,7 +15,8 @@ struct TaKNUApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            MainView(viewRouter: ViewRouter())
+            tabView(viewRouter: ViewRouter(), tabIndex: .home, rentDate: Date(), returnDate: Date(), rentItem: "charger")
+//            MainView(viewRouter: ViewRouter())
         }
     }
 }

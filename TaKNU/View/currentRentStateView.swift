@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct currentRentStateView: View {
-    @ObservedObject var viewRouter : ViewRouter
+//    @ObservedObject var viewRouter : ViewRouter
     @State var rentDate : Date
     @State var returnDate: Date
     @State var rentItem : String
@@ -35,21 +35,11 @@ struct currentRentStateView: View {
                 }
             }
         }
-        //        .toolbar {
-        //            ToolbarItem(placement: .principal) {
-        //                Text("대여현황")
-        //                    .font(.system(size: 20, weight: .semibold))
-        //                    .accessibilityAddTraits(.isHeader)
-        //            }
-        //        }
+
         .navigationBarHidden(true)
         .navigationTitle("")
         
     }
-    
-//    func getRentState(item){
-//
-//    }
 }
 
 struct currentRentStateView_Previews: PreviewProvider {

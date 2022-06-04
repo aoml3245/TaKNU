@@ -12,7 +12,7 @@ struct RegistrationView: View {
     @State private var email = ""
     @State private var username = ""
     @State private var password = ""
-    @ObservedObject var viewRouter : ViewRouter
+//    @ObservedObject var viewRouter : ViewRouter
     
     @Environment(\.presentationMode) var presentationMode
     

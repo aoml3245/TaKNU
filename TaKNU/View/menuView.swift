@@ -1,27 +1,7 @@
 import SwiftUI
 
-enum RentItem{
-    case mat, charger, blanket, multitab
-}
-
 struct menuView: View{
-    @ObservedObject var viewRouter : ViewRouter
-    @State var rentItem : RentItem = .mat
-    @State var rentItemString: String = ""
-    
-    func selectedItem(rentItem: RentItem) -> String{
-        switch rentItem {
-        case .mat:
-            return "돗자리"
-        case .charger:
-            return "충전기"
-        case .blanket:
-            return "담요"
-        case .multitab:
-            return "멀티탭"
-        }
-    }
-    
+    let viewModel: rentViewModel
     var body: some View{
         NavigationView{
             VStack(spacing: 0){
@@ -34,38 +14,21 @@ struct menuView: View{
                 .padding()
                 
                 ScrollView{
-                    HStack(spacing: 30){
-                        NavigationLink(destination: rentView(rentItem: rentItemString)){
-                            itemImage(imageName: selectedItem(rentItem: .mat))
+                    Image("배너")
+                        .resizable()
+                        .clipped()
+                        .frame(width: 330, height: 120)
+                        .cornerRadius(20)
+                        .padding()
+                    LazyVGrid(columns: [GridItem(), GridItem()]){
+                        ForEach(viewModel.items){ item in
+                            NavigationLink(destination: rentView(rentItem: item.content)){
+                                itemView(item: item)
+                            }
+                            .onTapGesture {
+                                viewModel.choose(item)
+                            }
                         }
-                        .simultaneousGesture(TapGesture().onEnded{
-                            self.rentItem = .mat
-                            rentItemString = selectedItem(rentItem: self.rentItem)
-                        })
-                        
-                        NavigationLink(destination: rentView(rentItem: rentItemString)){
-                            itemImage(imageName: selectedItem(rentItem: .charger))
-                        }
-                        .simultaneousGesture(TapGesture().onEnded{
-                            self.rentItem = .charger
-                            rentItemString = selectedItem(rentItem: self.rentItem)
-                        })
-                    }.padding(30)
-                    HStack(spacing: 30){
-                        NavigationLink(destination: rentView(rentItem: rentItemString)){
-                            itemImage(imageName: selectedItem(rentItem: .blanket))
-                        }
-                        .simultaneousGesture(TapGesture().onEnded{
-                            self.rentItem = .blanket
-                            rentItemString = selectedItem(rentItem: self.rentItem)
-                        })
-                        NavigationLink(destination: rentView(rentItem: rentItemString)){
-                            itemImage(imageName: selectedItem(rentItem: .multitab))
-                        }
-                        .simultaneousGesture(TapGesture().onEnded{
-                            self.rentItem = .multitab
-                            rentItemString = selectedItem(rentItem: self.rentItem)
-                        })
                     }
                 }
             }
@@ -76,10 +39,31 @@ struct menuView: View{
     }
 }
 
-
+struct itemView: View{
+    let item: rentModel<String>.Item
+    var body: some View{
+        VStack{
+            HStack{
+                Image(item.content)
+                    .resizable()
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                    .frame(width: 100, height: 100)
+                    .padding()
+            }
+            .frame(width: 150, height: 150)
+            .background(Color(red: 220/255, green: 220/255, blue: 220/255))
+            .cornerRadius(18)
+            Text(item.content)
+                .font(.system(size: 19))
+                .fontWeight(.bold)
+                .foregroundColor(.secondary)
+        }
+    }
+}
 
 struct menuView_Previews: PreviewProvider {
     static var previews: some View {
-        menuView(rentItem: .blanket)
+        let test = rentViewModel()
+        menuView(viewModel: test)
     }
 }

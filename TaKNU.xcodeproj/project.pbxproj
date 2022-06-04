@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BBF2957284A7B5100B355D1 /* rentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBF2956284A7B5100B355D1 /* rentModel.swift */; };
+		1BBF295A284A7B7600B355D1 /* rentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBF2959284A7B7600B355D1 /* rentViewModel.swift */; };
 		F3279A3C2828DD6A0067A153 /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3279A3B2828DD6A0067A153 /* AuthenticationModel.swift */; };
 		F32C72C02830DFF70070AA27 /* TaKNUApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C72BF2830DFF70070AA27 /* TaKNUApp.swift */; };
 		F32C72D22830E0130070AA27 /* AdministerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C72C12830E0130070AA27 /* AdministerView.swift */; };
 		F32C72D32830E0130070AA27 /* rentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C72C22830E0130070AA27 /* rentView.swift */; };
 		F32C72D42830E0130070AA27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C72C32830E0130070AA27 /* ContentView.swift */; };
 		F32C72D52830E0130070AA27 /* overdueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C72C42830E0130070AA27 /* overdueView.swift */; };
-		F32C72D62830E0130070AA27 /* itemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C72C52830E0130070AA27 /* itemImage.swift */; };
 		F32C72D72830E0130070AA27 /* rentItemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C72C62830E0130070AA27 /* rentItemImage.swift */; };
 		F32C72D82830E0130070AA27 /* returnModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C72C72830E0130070AA27 /* returnModalView.swift */; };
 		F32C72D92830E0130070AA27 /* settingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C72C82830E0130070AA27 /* settingView.swift */; };
@@ -63,13 +64,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1BBF2956284A7B5100B355D1 /* rentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rentModel.swift; sourceTree = "<group>"; };
+		1BBF2959284A7B7600B355D1 /* rentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rentViewModel.swift; sourceTree = "<group>"; };
 		F3279A3B2828DD6A0067A153 /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
 		F32C72BF2830DFF70070AA27 /* TaKNUApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaKNUApp.swift; sourceTree = "<group>"; };
 		F32C72C12830E0130070AA27 /* AdministerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdministerView.swift; sourceTree = "<group>"; };
 		F32C72C22830E0130070AA27 /* rentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rentView.swift; sourceTree = "<group>"; };
 		F32C72C32830E0130070AA27 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F32C72C42830E0130070AA27 /* overdueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = overdueView.swift; sourceTree = "<group>"; };
-		F32C72C52830E0130070AA27 /* itemImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = itemImage.swift; sourceTree = "<group>"; };
 		F32C72C62830E0130070AA27 /* rentItemImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rentItemImage.swift; sourceTree = "<group>"; };
 		F32C72C72830E0130070AA27 /* returnModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = returnModalView.swift; sourceTree = "<group>"; };
 		F32C72C82830E0130070AA27 /* settingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingView.swift; sourceTree = "<group>"; };
@@ -130,6 +132,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BBF2958284A7B6700B355D1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1BBF2959284A7B7600B355D1 /* rentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F3279A382828DD090067A153 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				F3279A3B2828DD6A0067A153 /* AuthenticationModel.swift */,
+				1BBF2956284A7B5100B355D1 /* rentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,6 +191,7 @@
 		F357746228192832002FBCDA /* TaKNU */ = {
 			isa = PBXGroup;
 			children = (
+				1BBF2958284A7B6700B355D1 /* ViewModel */,
 				F32C72BF2830DFF70070AA27 /* TaKNUApp.swift */,
 				F3279A3A2828DD460067A153 /* Model */,
 				F3279A382828DD090067A153 /* View */,
@@ -203,7 +215,6 @@
 			children = (
 				F32C72CF2830E0130070AA27 /* rentedBox.swift */,
 				F32C72C62830E0130070AA27 /* rentItemImage.swift */,
-				F32C72C52830E0130070AA27 /* itemImage.swift */,
 				F33EF68F2844D06400B38557 /* CustomInputField.swift */,
 				F33EF68D2844D02300B38557 /* RoundedShape.swift */,
 				F33EF68B2844CFED00B38557 /* MainTabView.swift */,
@@ -333,11 +344,11 @@
 				F32C72DF2830E0130070AA27 /* checkboxView.swift in Sources */,
 				F32C72D22830E0130070AA27 /* AdministerView.swift in Sources */,
 				F32C72E42830F63A0070AA27 /* testView.swift in Sources */,
-				F32C72D62830E0130070AA27 /* itemImage.swift in Sources */,
 				F32C72DA2830E0130070AA27 /* currentRentStateView.swift in Sources */,
 				F32C72E22830E0130070AA27 /* RenderListVIew.swift in Sources */,
 				F32C72D52830E0130070AA27 /* overdueView.swift in Sources */,
 				F33EF6902844D06400B38557 /* CustomInputField.swift in Sources */,
+				1BBF2957284A7B5100B355D1 /* rentModel.swift in Sources */,
 				F33EF68A2844CFAB00B38557 /* RegistrationView.swift in Sources */,
 				F3279A3C2828DD6A0067A153 /* AuthenticationModel.swift in Sources */,
 				F32C72DE2830E0130070AA27 /* tabView.swift in Sources */,
@@ -346,6 +357,7 @@
 				F33EF68C2844CFED00B38557 /* MainTabView.swift in Sources */,
 				F32C72D32830E0130070AA27 /* rentView.swift in Sources */,
 				F32C72D82830E0130070AA27 /* returnModalView.swift in Sources */,
+				1BBF295A284A7B7600B355D1 /* rentViewModel.swift in Sources */,
 				F32C72D92830E0130070AA27 /* settingView.swift in Sources */,
 				F32C72DD2830E0130070AA27 /* MySettingView.swift in Sources */,
 				F32C72D72830E0130070AA27 /* rentItemImage.swift in Sources */,

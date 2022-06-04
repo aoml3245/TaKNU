@@ -21,7 +21,8 @@ struct tabView: View{
     func changeMyView(tabIndex: TabIndex) -> some View{
         switch tabIndex {
         case .home:
-            return AnyView(menuView(rentItem: .blanket))
+            let test = rentViewModel()
+            return AnyView(menuView(viewModel: test))
         case .rent:
             return AnyView(currentRentStateView(rentDate: rentDate, returnDate: returnDate, rentItem: rentItem))
         case .setting:
@@ -54,7 +55,7 @@ struct tabView: View{
                             Image(systemName: "house.fill")
                                 .font(.system(size: 25))
                                 .foregroundColor(self.tabIndex == .home ? self.changeIconColor(tabIndex: self.tabIndex) : .gray)
-                                .frame(width: proxy.size.width/3)
+                                .frame(width: proxy.size.width/3, height: 50)
                         }.background(.white)
                         Button(action:{
                            
@@ -64,7 +65,7 @@ struct tabView: View{
                             Image(systemName: "archivebox.fill")
                                 .font(.system(size: 25))
                                 .foregroundColor(self.tabIndex == .rent ? self.changeIconColor(tabIndex: self.tabIndex) : .gray)
-                                .frame(width: proxy.size.width/3)
+                                .frame(width: proxy.size.width/3, height: 50)
                         }.background(.white)
                         Button(action:{
                             
@@ -74,7 +75,7 @@ struct tabView: View{
                             Image(systemName: "person.crop.circle.fill")
                                 .font(.system(size: 25))
                                 .foregroundColor(self.tabIndex == .setting ? self.changeIconColor(tabIndex: self.tabIndex) : .gray)
-                                .frame(width: proxy.size.width/3)
+                                .frame(width: proxy.size.width/3, height: 50)
                         }.background(.white)
                     }
                     Rectangle()

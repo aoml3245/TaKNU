@@ -10,7 +10,6 @@ import SwiftUI
 
 
 struct rentItemImage: View{
-    
     @Binding var rentItem : String
     
     var body: some View{
@@ -23,9 +22,3 @@ struct rentItemImage: View{
         }
     }
 }
-
-//struct rentItemImage_Previews: PreviewProvider {
-//    static var previews: some View {
-//        rentItemImage(rentItem: $rentItem)
-//    }
-//}

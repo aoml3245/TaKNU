@@ -43,6 +43,7 @@ struct rentedBox : View{
                     returnModalView()
                 }
         }
+        .padding(.horizontal)
         .foregroundColor(.black)
         .font(.system(size: 15))
         .background(.yellow)
@@ -52,15 +53,9 @@ struct rentedBox : View{
 
     }
 }
-//
-//struct rentedBox_Previews: PreviewProvider {
-//    static var previews: some View {
-//        VStack(alignment: .center, spacing: 20){
-//            HStack(alignment: .center){
-//
-//            }
-//            HStack{
-//            }
-//        }
-//    }
-//}
+
+struct rentedBox_Previews: PreviewProvider {
+    static var previews: some View {
+        rentedBox(rentDate: Date(), returnDate: Date(), rentItem: "mat")
+    }
+}

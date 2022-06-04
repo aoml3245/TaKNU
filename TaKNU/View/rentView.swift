@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct rentView: View {
-    @ObservedObject var viewRouter : ViewRouter
+//    @ObservedObject var viewRouter : ViewRouter
     @State private var isChecked = false
     @State private var selectedDate = Date()
     @State private var shouldAlert : Bool = false
@@ -28,17 +28,6 @@ struct rentView: View {
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(.gray, lineWidth: 1))
                     Divider().frame(height: 40)
                     selectingDate(selectedDate: $selectedDate)
-//                    HStack{
-//                        Image(systemName: "flame.fill")
-//                            .font(.system(size: 25))
-//                            .foregroundColor(self.isChecked ? .blue : .gray)
-//                        Image(systemName: "car.fill")
-//                            .font(.system(size: 25))
-//                            .foregroundColor(self.isActive ? .blue : .gray)
-//                        Image(systemName: "person.fill")
-//                            .font(.system(size: 25))
-//                            .foregroundColor(self.shouldAlert ? .blue : .gray)
-//                    }
                     checkBoxView(checked: $isChecked)
                         .padding(.bottom, 40)
                     VStack{
@@ -134,7 +123,7 @@ struct rentButton: View{
 
 struct rentView_Previews: PreviewProvider {
     struct rentViewHolder: View {
-        @State var rentItem = "돗자리"
+        @State var rentItem = "mat"
         
         var body: some View {
             rentView(rentItem: rentItem)
