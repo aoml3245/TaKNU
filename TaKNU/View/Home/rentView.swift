@@ -5,6 +5,7 @@
 //  Created by 박상원 on 2022/05/09.
 //
 import SwiftUI
+import Firebase
 
 struct rentView: View {
     @ObservedObject var viewRouter : ViewRouter
@@ -14,10 +15,18 @@ struct rentView: View {
     @State private var selectedDate = Date()
     @State private var shouldAlert : Bool = false
     @State private var isActive: Bool = false
+    @State var alertMessage = ""
     
     private var returnDate: Date {
         selectedDate.addingTimeInterval(60*60*24)
     }
+    private var selectedDateString: String {
+        self.dateFormat().string(from: selectedDate)
+    }
+    private var returnDateString: String {
+        self.dateFormat().string(from: returnDate)
+    }
+    
     @State var presentAlert: Bool = false
     var printReturnDate: String {
         self.dateFormat().string(from: returnDate)
@@ -44,8 +53,17 @@ struct rentView: View {
                                 self.presentAlert = false
                             }
                             if self.isChecked{
-                                self.presentAlert = true
+                                takeItem(itemname: rentItem, borrowedtime: selectedDateString, returntime: returnDateString)
+//                                if takeItem(itemname: rentItem, borrowedtime: selectedDate, returntime: returnDate) == true{
+//                                    viewRouter.currentPage = "currentRentStateView"
+//                                    self.isActive = true
+//                                }
+//                                else{
+//                                    self.alertMessage = "빌릴 물품이 부족합니다."
+//                                    self.presentAlert = true
+//                                }
                             }
+                            
                         } label: {
                             VStack{
                                 Text("대여하기")
@@ -60,18 +78,13 @@ struct rentView: View {
                                             .fontWeight(.bold)
                                     }
                             }
-                                .alert("alarm", isPresented: $presentAlert, actions: {
-                                    Button{
-                                        self.isActive = true
-                                        viewRouter.currentPage = "currentRentStateView"
-                                    }label: {
-                                        Text("Ok")
-                                    }
-                                    Button("cancel", role: .cancel){
+                                .alert("알림", isPresented: $presentAlert, actions: {
+                                    
+                                    Button("Ok", role: .cancel){
                                         
                                     }
                                 }, message: {
-                                    Text("message")
+                                    Text(alertMessage)
                                 })
                                 .frame(width: 280)
                                 .padding(.vertical)
@@ -93,6 +106,42 @@ struct rentView: View {
         }
     }
     
+    func takeItem(itemname: String, borrowedtime: String, returntime: String){
+            //물품 대여
+            var rent = true
+            let uid = Auth.auth().currentUser?.uid
+        let ref: DatabaseReference! = Database.database().reference()
+            
+            ref.child("Thinglist/\(itemname)").observeSingleEvent(of: .value, with: { snapshot in
+                
+                var s = snapshot.value! as? Int ?? 0
+                print(s)
+                
+                // 대여가능여부 파악
+                if 0 < s {
+                    s = s - 1
+                    print ("대여 완료.")
+                    // user에 업데이트
+                    ref.child("Users/\(String(describing: uid))/takerecode/returntime").setValue(returntime)
+                    ref.child("Users/\(String(describing: uid))/takerecode/taketime").setValue(borrowedtime)
+                    ref.child("Users/\(String(describing: uid))/takerecode/thingname").setValue(itemname)
+                    
+                } else {
+                    print ("잘못된 동작입니다.")
+                    rent = false
+                    self.alertMessage = "빌릴 물품이 부족합니다."
+                    self.presentAlert = true
+                    return
+                }
+                
+                ref.child("Thinglist/\(itemname)").setValue(s)
+                
+                viewRouter.currentPage = "currentRentStateView"
+                self.isActive = true
+            })
+            
+            // 대여 가능여부 반환
+        }
     
     func dateFormat() -> DateFormatter{
         let formatter = DateFormatter()

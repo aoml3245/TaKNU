@@ -1,9 +1,12 @@
 import SwiftUI
+import Firebase
 
 struct menuView: View{
     var viewRouter : ViewRouter
     var rentViewModel: rentViewModel
     var rentItems = ["charger2", "mat", "blanket", "power"]
+    
+    
     @State var showRent = false
     var body: some View{
         VStack(spacing: 0){
@@ -43,6 +46,7 @@ struct menuView: View{
             }
         }
     }
+    
 }
 
 struct itemView: View{
