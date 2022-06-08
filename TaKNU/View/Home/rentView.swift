@@ -8,6 +8,7 @@ import SwiftUI
 
 struct rentView: View {
     @ObservedObject var viewRouter : ViewRouter
+    @ObservedObject var rentViewModel : rentViewModel
     @State private var isChecked = false
     @State private var selectedDate = Date()
     @State private var shouldAlert : Bool = false
@@ -61,6 +62,7 @@ struct rentView: View {
                                     Button{
                                         self.isActive = true
                                         viewRouter.currentPage = "currentRentStateView"
+                                        print(rentViewModel.getSelectedItem())
                                     }label: {
                                         Text("Ok")
                                     }
@@ -150,7 +152,7 @@ struct rentView_Previews: PreviewProvider {
     struct rentViewHolder: View {
         
         var body: some View {
-            rentView(viewRouter: ViewRouter())
+            rentView(viewRouter: ViewRouter(), rentViewModel: rentViewModel())
         }
     }
     static var previews: some View {

@@ -18,14 +18,36 @@ class ViewRouter: ObservableObject{
         case home, rent, setting
     }
     
-    @State var tabIndex: TabIndex = .home
+    @State var tabIndex: TabIndex = .home{
+        didSet{
+            if tabIndex == .home{
+                houseColor = Color.green
+                rentColor = Color.gray
+                settingColor = Color.gray
+            }
+            else if tabIndex == .rent{
+                houseColor = Color.gray
+                rentColor = Color.purple
+                settingColor = Color.gray
+            }
+            else if tabIndex == .setting{
+                houseColor = Color.gray
+                rentColor = Color.gray
+                settingColor = Color.blue
+            }
+        }
+    }
     
     var currentPage: String = "LoginView"{
         didSet{
             objectWillChange.send(self)
         }
     }
+
     
+    @State var houseColor: Color = Color.green
+    @State var rentColor: Color  = Color.gray
+    @State var settingColor: Color = Color.gray
     
     
     @State var rentItem: String = ""

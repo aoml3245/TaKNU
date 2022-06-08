@@ -26,7 +26,7 @@ class rentViewModel: ObservableObject{
         model.choose(item)
     }
     
-    func getSelectedItem(){
-        model.returnselectedItem()
+    func getSelectedItem() -> String{
+        return model.returnselectedItem()
     }
 }
