@@ -20,10 +20,10 @@ struct MainView: View {
                 LoginView(viewRouter : viewRouter)
             }
             else if viewRouter.currentPage == "RegistrationView"{
-                RegistrationView()
+                RegistrationView(viewRouter: viewRouter)
             }
             else if viewRouter.currentPage == "rentView"{
-                rentView(viewRouter: viewRouter, rentViewModel: rentViewModel)
+                rentView(viewRouter: viewRouter, rentViewModel: rentViewModel, rentItem: viewRouter.rentItem)
             }
             else{
                 GeometryReader{ proxy in

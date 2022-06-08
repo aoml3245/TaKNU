@@ -10,19 +10,19 @@ import SwiftUI
 struct rentModel<ItemContent> where ItemContent: Equatable{
     private(set) var items: Array<Item>
     private(set) var atrs: Array<Atr>
-    private(set) var selectedItem: String = ""
+    var selectedItem: String = ""
     
     mutating func choose(_ item: Item){
         let chosenIndex = index(of: item)
         let chosenItem = items[chosenIndex]
         selectedItem = item.content as! String
-        print(chosenItem)
+        print(selectedItem)
         print(selectedItem)
     }
-    
-    func returnselectedItem() -> String{
-        return selectedItem
-    }
+//
+//    func returnselectedItem() -> String{
+//        return selectedItem
+//    }
     
     func index(of item: Item) -> Int{
         for index in 0..<items.count{

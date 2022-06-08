@@ -50,7 +50,7 @@ class ViewRouter: ObservableObject{
     @State var settingColor: Color = Color.gray
     
     
-    @State var rentItem: String = ""
+    var rentItem: String = "mat"
     
-//    func moveToCurrentModal(
+
 }

@@ -9,10 +9,12 @@ import SwiftUI
 struct rentView: View {
     @ObservedObject var viewRouter : ViewRouter
     @ObservedObject var rentViewModel : rentViewModel
+    @State var rentItem :String
     @State private var isChecked = false
     @State private var selectedDate = Date()
     @State private var shouldAlert : Bool = false
     @State private var isActive: Bool = false
+    
     private var returnDate: Date {
         selectedDate.addingTimeInterval(60*60*24)
     }
@@ -24,7 +26,7 @@ struct rentView: View {
     var body: some View {
         ScrollView{
             VStack(alignment: .center, spacing: 20){
-                rentItemImage(rentItem: $viewRouter.rentItem)
+                rentItemImage(rentItem: $rentItem)
                 VStack(alignment: .center,spacing: 0){
                     Text("대여 일자")
                         .padding(9)
@@ -62,7 +64,6 @@ struct rentView: View {
                                     Button{
                                         self.isActive = true
                                         viewRouter.currentPage = "currentRentStateView"
-                                        print(rentViewModel.getSelectedItem())
                                     }label: {
                                         Text("Ok")
                                     }
@@ -152,7 +153,7 @@ struct rentView_Previews: PreviewProvider {
     struct rentViewHolder: View {
         
         var body: some View {
-            rentView(viewRouter: ViewRouter(), rentViewModel: rentViewModel())
+            rentView(viewRouter: ViewRouter(), rentViewModel: rentViewModel(), rentItem: "charger2")
         }
     }
     static var previews: some View {

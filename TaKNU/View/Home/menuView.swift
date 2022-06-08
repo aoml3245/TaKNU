@@ -1,8 +1,10 @@
 import SwiftUI
 
 struct menuView: View{
-    let viewRouter : ViewRouter
-    let rentViewModel: rentViewModel
+    var viewRouter : ViewRouter
+    var rentViewModel: rentViewModel
+    var rentItems = ["charger2", "mat", "blanket", "power"]
+    @State var showRent = false
     var body: some View{
         VStack(spacing: 0){
             HStack(spacing: 0){
@@ -24,9 +26,16 @@ struct menuView: View{
                     ForEach(rentViewModel.items){ item in
                         Button {
                             rentViewModel.choose(item)
-                            viewRouter.currentPage = "rentView"
+                            viewRouter.rentItem = rentItems[item.id]
+                            print(viewRouter.rentItem)
+                            showRent = true
+//                            viewRouter.currentPage = "rentView"
+                            
                         } label: {
                             itemView(item: item)
+                        }
+                        .sheet(isPresented: self.$showRent){
+                            rentView(viewRouter: viewRouter, rentViewModel: rentViewModel, rentItem: viewRouter.rentItem)
                         }
 
                     }
