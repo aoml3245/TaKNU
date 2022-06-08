@@ -44,36 +44,38 @@ struct rentView: View {
                                 self.presentAlert = true
                             }
                         } label: {
-                            Text("대여하기")
-                                .fontWeight(.bold)
-                                .font(.system(size: 20))
-                            Text("반납 예정일 : \(printReturnDate)")
-                                .alert("", isPresented: $shouldAlert){
-                                    Button("OK"){}
-                                } message:{
-                                    Text("you should check the checkbox!")
-                                        .font(.system(size: 30))
-                                        .fontWeight(.bold)
-                                }
+                            VStack{
+                                Text("대여하기")
+                                    .fontWeight(.bold)
+                                    .font(.system(size: 20))
+                                Text("반납 예정일 : \(printReturnDate)")
+                                    .alert("", isPresented: $shouldAlert){
+                                        Button("OK"){}
+                                    } message:{
+                                        Text("you should check the checkbox!")
+                                            .font(.system(size: 30))
+                                            .fontWeight(.bold)
+                                    }
+                            }
+                                .alert("alarm", isPresented: $presentAlert, actions: {
+                                    Button{
+                                        self.isActive = true
+                                        viewRouter.currentPage = "currentRentStateView"
+                                    }label: {
+                                        Text("Ok")
+                                    }
+                                    Button("cancel", role: .cancel){
+                                        
+                                    }
+                                }, message: {
+                                    Text("message")
+                                })
+                                .frame(width: 280)
+                                .padding(.vertical)
+                                .background(.orange)
+                                .foregroundColor(.white)
+                                .cornerRadius(100)
                         }
-                            .alert("alarm", isPresented: $presentAlert, actions: {
-                                Button{
-                                    self.isActive = true
-                                    viewRouter.currentPage = "currentRentStateView"
-                                }label: {
-                                    Text("Ok")
-                                }
-                                Button("cancel", role: .cancel){
-                                    
-                                }
-                            }, message: {
-                                Text("message")
-                            })
-                            .frame(width: 280)
-                            .padding(.vertical)
-                            .background(.orange)
-                            .foregroundColor(.white)
-                            .cornerRadius(100)
                     }
                 }
                 .frame(width: 300)
