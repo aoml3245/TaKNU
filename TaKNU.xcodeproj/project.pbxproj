@@ -224,8 +224,8 @@
 		F3EB2909284A0E60007F8055 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F32C72C22830E0130070AA27 /* rentView.swift */,
 				F32C72CB2830E0130070AA27 /* menuView.swift */,
+				F32C72C22830E0130070AA27 /* rentView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";

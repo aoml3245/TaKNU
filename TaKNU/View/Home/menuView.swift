@@ -4,39 +4,34 @@ struct menuView: View{
     let viewRouter : ViewRouter
     let rentViewModel: rentViewModel
     var body: some View{
-        NavigationView{
-            VStack(spacing: 0){
-                HStack(spacing: 0){
-                    Image("logo1")
-                        .resizable()
-                        .scaledToFit()
-                }
-                .frame(height: 30)
-                .padding()
-                
-                ScrollView{
-                    Image("배너")
-                        .resizable()
-                        .clipped()
-                        .frame(width: 330, height: 120)
-                        .cornerRadius(20)
-                        .padding()
-                    LazyVGrid(columns: [GridItem(), GridItem()]){
-                        ForEach(rentViewModel.items){ item in
-                            Button {
-                                rentViewModel.choose(item)
-                                viewRouter.currentPage = "rentView"
-                            } label: {
-                                itemView(item: item)
-                            }
-
+        VStack(spacing: 0){
+            HStack(spacing: 0){
+                Image("logo1")
+                    .resizable()
+                    .scaledToFit()
+            }
+            .frame(height: 30)
+            .padding()
+            
+            ScrollView{
+                Image("배너")
+                    .resizable()
+                    .clipped()
+                    .frame(width: 330, height: 120)
+                    .cornerRadius(20)
+                    .padding()
+                LazyVGrid(columns: [GridItem(), GridItem()]){
+                    ForEach(rentViewModel.items){ item in
+                        Button {
+                            rentViewModel.choose(item)
+                            viewRouter.currentPage = "rentView"
+                        } label: {
+                            itemView(item: item)
                         }
+
                     }
                 }
             }
-            .navigationBarTitle("")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarHidden(true)
         }
     }
 }
