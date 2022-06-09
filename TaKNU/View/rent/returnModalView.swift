@@ -94,7 +94,7 @@ struct returnModalView: View {
         
         let day = date % 24
         
-        let ret = String(day) + "일" + String(hour) + "시" + String(minute) + "분" + String(second) + "초"
+        let ret = String(day) + "일" + String(hour) + "시간" + String(minute) + "분" + String(second) + "초"
         
         return ret
         
