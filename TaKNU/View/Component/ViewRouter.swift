@@ -38,7 +38,7 @@ class ViewRouter: ObservableObject{
         }
     }
     
-    var currentPage: String = "menuView"{
+    var currentPage: String = "LoginView"{
         didSet{
             objectWillChange.send(self)
         }

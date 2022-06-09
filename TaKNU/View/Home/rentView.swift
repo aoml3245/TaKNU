@@ -16,6 +16,7 @@ struct rentView: View {
     @State private var shouldAlert : Bool = false
     @State private var isActive: Bool = false
     @State var alertMessage = ""
+    @State var rentedState = false
     
     private var returnDate: Date {
         selectedDate.addingTimeInterval(60*60*24)
@@ -53,7 +54,7 @@ struct rentView: View {
                                 self.presentAlert = false
                             }
                             if self.isChecked{
-                                takeItem(itemname: rentItem, borrowedtime: selectedDateString, returntime: returnDateString)
+                                checkTakeAval(itemname: rentItem, borrowedtime: selectedDateString, returntime: returnDateString)
 //                                if takeItem(itemname: rentItem, borrowedtime: selectedDate, returntime: returnDate) == true{
 //                                    viewRouter.currentPage = "currentRentStateView"
 //                                    self.isActive = true
@@ -80,7 +81,9 @@ struct rentView: View {
                                 .alert("알림", isPresented: $presentAlert, actions: {
                                     
                                     Button("Ok", role: .cancel){
-                                        
+                                        if rentedState == true{
+                                            viewRouter.currentPage = "currentRentStateView"
+                                        }
                                     }
                                 }, message: {
                                     Text(alertMessage)
@@ -98,9 +101,29 @@ struct rentView: View {
         }
     }
     
+    func checkTakeAval(itemname: String, borrowedtime: String, returntime: String){
+        let uid = Auth.auth().currentUser?.uid
+        let ref: DatabaseReference! = Database.database().reference()
+        print(uid)
+        ref.child("Users/\(String(describing: uid!))/takerecode/").observeSingleEvent(of: .value, with: { snapshot in
+            let value = snapshot.value as? NSDictionary
+            if let key = value?["thingname"] as? String{
+                print("현재 상태: ", key)
+                self.alertMessage = "현재 빌린 물품이 있습니다"
+                self.presentAlert = true
+                rentedState = true
+                return
+            }
+            else{
+                rentedState = false
+                takeItem(itemname: rentItem, borrowedtime: selectedDateString, returntime: returnDateString)
+            }
+            
+        })
+    }
+    
     func takeItem(itemname: String, borrowedtime: String, returntime: String){
             //물품 대여
-            var rent = true
             let uid = Auth.auth().currentUser?.uid
         let ref: DatabaseReference! = Database.database().reference()
             
@@ -114,13 +137,12 @@ struct rentView: View {
                     s = s - 1
                     print ("대여 완료.")
                     // user에 업데이트
-                    ref.child("Users/\(String(describing: uid))/takerecode/returntime").setValue(returntime)
-                    ref.child("Users/\(String(describing: uid))/takerecode/taketime").setValue(borrowedtime)
-                    ref.child("Users/\(String(describing: uid))/takerecode/thingname").setValue(itemname)
+                    ref.child("Users/\(String(describing: uid!))/takerecode/returntime").setValue(returntime)
+                    ref.child("Users/\(String(describing: uid!))/takerecode/taketime").setValue(borrowedtime)
+                    ref.child("Users/\(String(describing: uid!))/takerecode/thingname").setValue(itemname)
                     
                 } else {
                     print ("잘못된 동작입니다.")
-                    rent = false
                     self.alertMessage = "빌릴 물품이 부족합니다."
                     self.presentAlert = true
                     return
@@ -167,3 +189,8 @@ struct rentView_Previews: PreviewProvider {
         rentViewHolder()
     }
 }
+
+
+
+
+
