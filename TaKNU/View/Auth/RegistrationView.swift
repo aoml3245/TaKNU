@@ -19,7 +19,7 @@ struct RegistrationView: View {
     
     var body: some View {
         VStack {
-            MainTabView(title1: "시작하기", title2: "계정을 만들자")
+            MainTabView(title1: "시작하기!", title2: "계정을 만들어 주세요")
             
             VStack (spacing: 40){
                 CustomInputField(imageName: "envelope",
@@ -44,8 +44,8 @@ struct RegistrationView: View {
                 Text("가입하기")
                     .font(.headline)
                     .foregroundColor(.white)
-                    .frame(width: 340, height: 50)
-                    .background(Color(.systemRed))
+                    .frame(width: 300, height: 55)
+                    .background(Color(red: 255/255, green: 40/255, blue: 1/255))
                     .clipShape(Capsule())
                     .padding()
             }

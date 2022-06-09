@@ -15,7 +15,7 @@ struct rentedBox : View{
     
     func dateFormat() -> DateFormatter{
         let formatter = DateFormatter()
-        formatter.dateFormat = "Y.M.d a h:m"
+        formatter.dateFormat = "Y. M. d a h:mm"
         return formatter
     }
     
@@ -47,18 +47,20 @@ struct rentedBox : View{
                     .foregroundColor(Color(red: 50/255, green: 50/255, blue: 50/255))
                     .background(Color(red: 217/255, green: 217/255, blue: 217/255))
                     .cornerRadius(100)
-            }.padding(.bottom, 30)
-                .sheet(isPresented: self.$showModal){
-                    returnModalView(viewRouter: viewRouter, rentDate: rentDate, returnDate: returnDate, rentItem: rentItem)
-                }
+                    .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 0)
+            }
+            .padding(.bottom, 30)
+            .sheet(isPresented: self.$showModal){
+                returnModalView(viewRouter: viewRouter, rentDate: rentDate, returnDate: returnDate, rentItem: rentItem)
+            }
         }
         .padding(.horizontal)
-//        .frame(width: 330, height: 462)
+        //        .frame(width: 330, height: 462)
         .foregroundColor(.black)
         .font(.system(size: 15))
         .background(Color(red: 255/255, green: 209/255, blue: 92/255))
         .cornerRadius(20)
-
+        .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 0)
     }
     
 }

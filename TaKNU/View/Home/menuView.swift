@@ -25,6 +25,7 @@ struct menuView: View{
                     .frame(width: 330, height: 120)
                     .cornerRadius(20)
                     .padding()
+                    .shadow(color: .gray.opacity(0.2), radius: 10, x: 0, y: 0)
                 LazyVGrid(columns: [GridItem(), GridItem()]){
                     ForEach(rentViewModel.items){ item in
                         Button {
@@ -40,6 +41,7 @@ struct menuView: View{
                         .sheet(isPresented: self.$showRent){
                             rentView(viewRouter: viewRouter, rentViewModel: rentViewModel, rentItem: viewRouter.rentItem)
                         }
+                        .shadow(color: .gray.opacity(0.2), radius: 10, x: 0, y: 0)
 
                     }
                 }

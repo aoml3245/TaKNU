@@ -19,7 +19,7 @@ struct LoginView: View {
         // parent container
         VStack {
             
-            MainTabView(title1: "안녕하세요", title2: "TaKNU에 오신것을 환영합니다")
+            MainTabView(title1: "안녕하세요!", title2: "TAKNU에 오신것을 환영합니다")
         
             
             VStack(spacing: 40) {
@@ -41,11 +41,11 @@ struct LoginView: View {
             Button {
                 login(email: 이메일, password: 비밀번호)
             } label: {
-                Text("TaKNU 로그인")
-                .font(.subheadline)
+                Text("TAKNU 로그인")
+                .font(.headline)
                 .foregroundColor(.white)
-                .frame(width: 360, height: 55)
-                .background(Color(.systemRed))
+                .frame(width: 300, height: 55)
+                .background(Color(red: 255/255, green: 40/255, blue: 1/255))
                 .clipShape(Capsule())
                 .padding()
             }
@@ -58,7 +58,7 @@ struct LoginView: View {
             
             
             HStack {
-                Text("혹시,TaKNU이 처음이신가요?")
+                Text("혹시 TAKNU가 처음이신가요?")
                     .font(.footnote)
             
                 Button{
@@ -71,7 +71,7 @@ struct LoginView: View {
                 }
             
             .padding(.bottom, 32)
-            .foregroundColor(Color(.systemRed))
+            .foregroundColor(Color(red: 255/255, green: 40/255, blue: 1/255))
         }
     
         .ignoresSafeArea() // căn góc tròn

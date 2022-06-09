@@ -52,5 +52,4 @@ class ViewRouter: ObservableObject{
     
     var rentItem: String = "돗자리"
     
-
 }

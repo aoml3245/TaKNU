@@ -38,6 +38,7 @@ struct rentView: View {
             VStack(alignment: .center, spacing: 20){
                 rentItemImage(rentItem: $rentItem)
                     .padding(.top, 30)
+                    .shadow(color: .gray.opacity(0.3), radius: 10, x: 0, y: 0)
                 VStack(alignment: .center,spacing: 0){
                     Text("언제부터 필요하신가요?")
                         .padding(9)
@@ -88,15 +89,15 @@ struct rentView: View {
                                 }, message: {
                                     Text(alertMessage)
                                 })
-                                .frame(width: 280)
+                                .frame(width: 300)
                                 .padding(.vertical)
                                 .background(.orange)
                                 .foregroundColor(.white)
                                 .cornerRadius(100)
                         }
+                        .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 0)
                     }
                 }
-                .frame(width: 300)
             }
         }
     }

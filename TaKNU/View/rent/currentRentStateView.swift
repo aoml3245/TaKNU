@@ -33,11 +33,12 @@ struct currentRentStateView: View {
             ScrollView{
                 if rentState == nil{
                     if rentDate == nil, returnDate == nil, rentItem == nil {
-                        Text("대여 물품이 없습니다")
-                            .font(.system(size: 40, weight: .black))
+//                        Spacer()
+                        Text("대여한 물품이 없어요.")
+                            .font(.system(size: 20, weight: .black))
                             .padding(.leading, 30)
                             .padding(.top)
-                        Spacer()
+//                        Spacer()
                     }
                     else{
                         rentedBox(viewRouter: viewRouter, rentDate: rentDate!, returnDate: returnDate!, rentItem: rentItem!)
@@ -68,7 +69,7 @@ struct currentRentStateView: View {
     
     func dateFormat() -> DateFormatter{
         let formatter = DateFormatter()
-        formatter.dateFormat = "Y . M . d a h:mm"
+        formatter.dateFormat = "Y. M. d a h:mm"
         return formatter
     }
     

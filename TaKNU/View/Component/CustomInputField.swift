@@ -24,8 +24,12 @@ struct CustomInputField: View {
                 
                 if isSecureField ?? false {
                     SecureField(placeholderText, text: $text)
+                        .textInputAutocapitalization(.never)
+                        .disableAutocorrection(true)
                 } else {
                     TextField(placeholderText, text: $text)
+                        .textInputAutocapitalization(.never)
+                        .disableAutocorrection(true)
                 }
             }
             

@@ -17,8 +17,6 @@ struct MySettingView : View{
                         .font(.system(size: 35, weight: .bold)).foregroundColor(.black)
                         .padding(.bottom, 10))
                     {
-                        Text("사용자명")
-
                         Button(action: {
                                 try? Auth.auth().signOut()
                             viewRouter.currentPage = "LoginView"
@@ -30,7 +28,6 @@ struct MySettingView : View{
                 }
             }
         }
-    
 }
 
 

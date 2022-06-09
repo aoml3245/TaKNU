@@ -12,7 +12,7 @@ struct MainTabView: View {
     let title2: String
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 5) {
             HStack { Spacer() }
           //  HStack { Spacer() } // day sang 2 goc
             
@@ -27,7 +27,7 @@ struct MainTabView: View {
 //            .frame(width: UIScreen.main.bounds.width, height: 260) // can chu ra giua le
         .frame(height: 260)
                 .padding(.leading)
-                .background(Color(.systemRed)) //màu nền chữ
+                .background(Color(red: 255/255, green: 40/255, blue: 1/255))
                 .foregroundColor(.white) // màu chữ
                 .clipShape(RoundedShape(corners: [.bottomRight]))
     }
@@ -35,6 +35,6 @@ struct MainTabView: View {
 
 struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {
-        MainTabView(title1: "안녕하세요", title2: "TaKNU에 오신것을 환영합니다")
+        MainTabView(title1: "안녕하세요", title2: "TAKNU에 오신것을 환영합니다")
     }
 }
