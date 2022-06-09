@@ -137,7 +137,7 @@ struct rentView: View {
     
     func dateFormat() -> DateFormatter{
         let formatter = DateFormatter()
-        formatter.dateFormat = "Y . M . d a h:m"
+        formatter.dateFormat = "Y . M . d a h:mm"
         return formatter
     }
     

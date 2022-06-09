@@ -7,53 +7,32 @@
 import SwiftUI
 
 struct MySettingView : View{
-//    @ObservedObject var viewRouter : ViewRouter
-    var body: some View{
-        NavigationView{
-            VStack(alignment: .leading, spacing: 20){
-                Text("마이페이지")
-                    .font(.system(size: 40, weight: .black))
-                    .padding(.leading, 17)
-                    .padding(.top)
-                ScrollView{
-//                    NavigationLink(destination: MyProfileView()){
-//                        Text("개인정보")
-//                            .frame(width: 300, height: 50,alignment: .leading)
-//                            .padding(.horizontal)
-//                            .overlay(Rectangle().stroke(.gray, lineWidth: 1))
-//                    }
-                    NavigationLink(destination: RenderListView()){
-                        Text("연체기록")
-                            .frame(width: 300, height: 50,alignment: .leading)
-                            .padding(.horizontal)
-                            .overlay(Rectangle().stroke(.gray, lineWidth: 1))
+    //    @ObservedObject var viewRouter : ViewRouter
+    @State var alarmState: Bool = true
+    var body: some View {
+        VStack{
+            List{
+                Section(header: Text("설정")
+                    .font(.system(size: 35, weight: .bold)).foregroundColor(.black)
+                    .padding(.bottom, 10))
+                {
+                    Text("사용자명")
+                    
+                    Button(action: {
+                        // action
+                    }) {
+                        Text("로그아웃")
                     }
-                    NavigationLink(destination: settingView()){
-                        Text("설정")
-                            .frame(width: 300, height: 50,alignment: .leading)
-                            .padding(.horizontal)
-                            .overlay(Rectangle().stroke(.gray, lineWidth: 1))
+                    Button(action: {
+                        // action
+                    }) {
+                        Text("탈퇴")
                     }
                 }
-                .foregroundColor(.black)
-                .font(.system(size: 25, weight: .medium))
-                .frame(width: 300)
-                .padding(.horizontal)
-                
             }
-            .navigationBarHidden(true)
-            .navigationTitle("")
         }
     }
-    
-//    func getUserData(){
-//        var ret : NSEnumerator?
-//        self.ref.child("User/\(uid)").observeSingleEvent(of: .value, with: { snapshot in
-//            ret =  snapshot.children
-//        })
-//    }
 }
-
 
 struct MySettingView_Previews: PreviewProvider {
     static var previews: some View {

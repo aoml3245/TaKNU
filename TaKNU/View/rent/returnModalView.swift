@@ -10,7 +10,7 @@ struct returnModalView: View {
 //    @ObservedObject var viewRouter : ViewRouter
     @Environment(\.presentationMode) var presentation
     @State var present: Bool = false
-    
+    @State var rentItem : String = ""
     var body: some View {
         VStack {
             HStack{
@@ -19,13 +19,25 @@ struct returnModalView: View {
                     .padding(.leading, 30)
                 Spacer()
             }
-            Image("돗자리")
-                .resizable()
-                .frame(width: 300, height: 300)
-            Text("대여 시작 : 2022년 5월 12일 19시 40분")
-            Text("반납 예정일 : 2022년 5월 13일 19시 40분")
-            Text("반납까지 5시간 41분 남았습니다.")
+            RoundedRectangle(cornerRadius: 20)
+                .foregroundColor(Color(red: 217/255, green: 217/255, blue: 217/255))
+                .overlay{
+                    Image("돗자리")
+                        .resizable()
+                        .padding()
+                }
+                .frame(width: 330, height: 330)
             
+            VStack(alignment: .leading, spacing: 10){
+                Text("대여 일자 : 2022년 5월 12일 19시 40분")
+                Text("반납 예정일 : 2022년 5월 13일 19시 40분")
+            }
+            .font(.system(size: 19, weight: .semibold))
+            .padding(.vertical)
+            
+            Text("반납까지 5시간 41분 남았어요.")
+                .font(.system(size: 19, weight: .semibold))
+
             Button(action:{
                 present.toggle()
             }){
