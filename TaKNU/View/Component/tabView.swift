@@ -48,9 +48,6 @@ struct tabView: View{
                         .frame(width: proxy.size.width/3, height: 50)
                 }.background(.white)
             }
-            Rectangle()
-                .foregroundColor(.white)
-                .frame(height: 20)
         }
     }
     

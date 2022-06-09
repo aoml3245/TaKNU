@@ -17,7 +17,6 @@ struct itemImage: View{
                 .resizable()
                 .clipShape(Rectangle())
                 .frame(width: 130, height: 130)
-                .cornerRadius(23)
                 .padding(.bottom, 15)
             Text(imageName)
                 .font(.system(size: 19))

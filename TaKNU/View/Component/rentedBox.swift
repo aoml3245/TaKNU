@@ -11,50 +11,58 @@ struct rentedBox : View{
     @State var rentDate: Date
     @State var returnDate: Date
     @State var rentItem: String
-
+    
     func dateFormat() -> DateFormatter{
         let formatter = DateFormatter()
-        formatter.dateFormat = "M월 d일 a H시"
+        formatter.dateFormat = "Y.M.d a h:m"
         return formatter
     }
     
     var body: some View{
         VStack(alignment: .center, spacing: 10){
-            Rectangle().frame(height: 0)
             Image(rentItem)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 140, height: 140, alignment: .center)
+                .frame(width: 240, height: 240)
                 .clipped()
-                .cornerRadius(10)
-            Text("대여 날짜 : \(rentDate, formatter: self.dateFormat())")
-            Text("반납 예정일 : \(returnDate, formatter: self.dateFormat())")
+                .padding(.top, 30)
+            Spacer()
+                .frame(height: 20)
+            VStack(alignment: .leading){
+                Text("대여일자 : \(rentDate, formatter: self.dateFormat())")
+                    .font(.system(size: 22, weight:.semibold))
+                    .padding(.bottom, 5)
+                Text("반납 예정일 : \(returnDate, formatter: self.dateFormat())")
+                    .font(.system(size: 22, weight:.semibold))
+            }
+            Spacer()
+                .frame(height:10)
             Button(action: {
                 self.showModal = true
             }){
                 Text("반납하기")
-                    .frame(width: 120, height: 40)
-                    .background(.orange)
-                    .foregroundColor(.white)
+                    .font(.system(size: 24, weight: .bold))
+                    .frame(width: 264, height: 66)
+                    .foregroundColor(Color(red: 50/255, green: 50/255, blue: 50/255))
+                    .background(Color(red: 217/255, green: 217/255, blue: 217/255))
                     .cornerRadius(100)
-            }.padding(.bottom, 10)
+            }.padding(.bottom, 30)
                 .sheet(isPresented: self.$showModal){
                     returnModalView()
                 }
         }
         .padding(.horizontal)
+//        .frame(width: 330, height: 462)
         .foregroundColor(.black)
         .font(.system(size: 15))
-        .background(.yellow)
-        .frame(width: 160)
-        .cornerRadius(10)
-
+        .background(Color(red: 255/255, green: 209/255, blue: 92/255))
+        .cornerRadius(20)
 
     }
 }
 
 struct rentedBox_Previews: PreviewProvider {
     static var previews: some View {
-        rentedBox(rentDate: Date(), returnDate: Date(), rentItem: "mat")
+        rentedBox(rentDate: Date(), returnDate: Date(), rentItem: "충전기")
     }
 }

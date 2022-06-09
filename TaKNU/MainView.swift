@@ -40,7 +40,6 @@ struct MainView: View {
                             MySettingView()
                             tabView(viewRouter: viewRouter, rentViewModel: rentViewModel,proxy: proxy,houseColor: .gray, rentColor: .gray, settingColor: .blue)
                         }
-                        
                     }
                 }
             }

@@ -36,13 +36,13 @@ struct rentView: View {
         ScrollView{
             VStack(alignment: .center, spacing: 20){
                 rentItemImage(rentItem: $rentItem)
+                    .padding(.top, 30)
                 VStack(alignment: .center,spacing: 0){
-                    Text("대여 일자")
+                    Text("언제부터 필요하신가요?")
                         .padding(9)
-                        .font(.system(size: 24))
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(.gray, lineWidth: 1))
-                    Divider().frame(height: 40)
+                        .font(.system(size: 20, weight: .bold))
                     selectingDate(selectedDate: $selectedDate)
+                    Divider().frame(height: 20)
                     checkBoxView(checked: $isChecked)
                         .padding(.bottom, 40)
                     VStack{
@@ -63,7 +63,6 @@ struct rentView: View {
 //                                    self.presentAlert = true
 //                                }
                             }
-                            
                         } label: {
                             VStack{
                                 Text("대여하기")
@@ -73,7 +72,7 @@ struct rentView: View {
                                     .alert("", isPresented: $shouldAlert){
                                         Button("OK"){}
                                     } message:{
-                                        Text("you should check the checkbox!")
+                                        Text("주의사항을 체크해주세요!")
                                             .font(.system(size: 30))
                                             .fontWeight(.bold)
                                     }
@@ -95,13 +94,6 @@ struct rentView: View {
                     }
                 }
                 .frame(width: 300)
-            }
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("대여하기")
-                        .font(.system(size: 20, weight: .semibold))
-                        .accessibilityAddTraits(.isHeader)
-                }
             }
         }
     }
@@ -145,7 +137,7 @@ struct rentView: View {
     
     func dateFormat() -> DateFormatter{
         let formatter = DateFormatter()
-        formatter.dateFormat = "M월 d일 a H시 m분"
+        formatter.dateFormat = "Y . M . d a h:m"
         return formatter
     }
     
@@ -164,45 +156,11 @@ struct selectingDate: View{
     }
 }
 
-//struct rentButton: View{
-//    @Binding var isChecked:Bool
-//    @Binding var selectedDate : Date
-//    @Binding var shouldAlert : Bool
-//    @Binding var returnDate : Date
-//    @State var printDate = ""
-//
-//    var body: some View{
-//
-//        VStack{
-//            Text("대여하기")
-//                .fontWeight(.bold)
-//                .font(.system(size: 20))
-//            Text("반납 예정일 : \(printDate)")
-//                .onAppear(){
-//                    printDate = formattedReturnTime(selectedDate)
-//                }
-//                .alert("", isPresented: $shouldAlert){
-//                    Button("OK"){}
-//                } message:{
-//                    Text("you should check the checkbox!")
-//                        .font(.system(size: 30))
-//                        .fontWeight(.bold)
-//                }
-//
-//        }
-//        .frame(width: 280)
-//        .padding(.vertical)
-//        .background(.orange)
-//        .foregroundColor(.white)
-//        .cornerRadius(100)
-//    }
-//}
 
 struct rentView_Previews: PreviewProvider {
     struct rentViewHolder: View {
-        
         var body: some View {
-            rentView(viewRouter: ViewRouter(), rentViewModel: rentViewModel(), rentItem: "charger2")
+            rentView(viewRouter: ViewRouter(), rentViewModel: rentViewModel(), rentItem: "충전기")
         }
     }
     static var previews: some View {

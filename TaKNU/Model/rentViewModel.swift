@@ -7,7 +7,7 @@
 import SwiftUI
 
 class rentViewModel: ObservableObject{
-    static let rentItems = ["charger2", "mat", "blanket", "power"]
+    static let rentItems = ["충전기", "돗자리", "담요", "멀티탭"]
     typealias Item = rentModel<String>.Item
     
     static func createView() -> rentModel<String> {

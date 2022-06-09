@@ -4,7 +4,7 @@ import Firebase
 struct menuView: View{
     var viewRouter : ViewRouter
     var rentViewModel: rentViewModel
-    var rentItems = ["charger2", "mat", "blanket", "power"]
+    var rentItems = ["충전기", "돗자리", "담요", "멀티탭"]
     
     
     @State var showRent = false
@@ -15,7 +15,7 @@ struct menuView: View{
                     .resizable()
                     .scaledToFit()
             }
-            .frame(height: 30)
+            .frame(width: 200,height: 40)
             .padding()
             
             ScrollView{
@@ -43,7 +43,9 @@ struct menuView: View{
 
                     }
                 }
+                .frame(width: 340)
             }
+            .frame(width: 350)
         }
     }
     
@@ -56,12 +58,11 @@ struct itemView: View{
             HStack{
                 Image(item.content)
                     .resizable()
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
                     .frame(width: 100, height: 100)
                     .padding()
             }
             .frame(width: 150, height: 150)
-            .background(Color(red: 220/255, green: 220/255, blue: 220/255))
+            .background(Color(red: 230/255, green: 230/255, blue: 230/255))
             .cornerRadius(18)
             Text(item.content)
                 .font(.system(size: 19))

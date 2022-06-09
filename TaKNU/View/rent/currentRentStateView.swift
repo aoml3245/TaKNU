@@ -11,9 +11,8 @@ struct currentRentStateView: View {
     @State var rentDate : Date = Date()
     @State var returnDate: Date = Date()
     @State var rentItem : String = ""
-
+    
     var body: some View {
-        
         VStack(alignment: .center, spacing: 20){
             HStack{
                 Text("대여 현황")
@@ -23,21 +22,10 @@ struct currentRentStateView: View {
                 Spacer()
             }
             ScrollView{
-                HStack(alignment: .center){
-                    rentedBox(rentDate: rentDate, returnDate: returnDate, rentItem: rentItem)
-                    rentedBox(rentDate: rentDate, returnDate: returnDate, rentItem: rentItem)
-                    
-                }
-                HStack{
-                    rentedBox(rentDate: rentDate, returnDate: returnDate, rentItem: rentItem)
-                    rentedBox(rentDate: rentDate, returnDate: returnDate, rentItem: rentItem)
-                }
+                rentedBox(rentDate: rentDate, returnDate: returnDate, rentItem: rentItem)
+                
             }
         }
-
-        .navigationBarHidden(true)
-        .navigationTitle("")
-        
     }
 }
 

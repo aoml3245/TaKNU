@@ -38,7 +38,7 @@ class ViewRouter: ObservableObject{
         }
     }
     
-    var currentPage: String = "LoginView"{
+    var currentPage: String = "menuView"{
         didSet{
             objectWillChange.send(self)
         }
@@ -50,7 +50,7 @@ class ViewRouter: ObservableObject{
     @State var settingColor: Color = Color.gray
     
     
-    var rentItem: String = "mat"
+    var rentItem: String = "돗자리"
     
 
 }
