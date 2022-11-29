@@ -3,9 +3,9 @@
 ## 이젠 쉽게 빌리자! 학생회 물품 대여 서비스
 
 <img src = "https://user-images.githubusercontent.com/75407186/204604796-17735229-7f31-4a79-b610-7edeeb91cde6.png" width = "300" align = "left">
-
 <img src = "https://user-images.githubusercontent.com/75407186/204604937-ef6c2023-7b2d-4777-8020-bc2f2ad2d2b0.png" width = "300" align = "left">
-<img src = "https://user-images.githubusercontent.com/75407186/204604928-ba52449c-7b6a-4355-abdd-05cc9f79415e.png" width = "300">
+<img src = "https://user-images.githubusercontent.com/75407186/204604928-ba52449c-7b6a-4355-abdd-05cc9f79415e.png" width = "300" >
+
 
 ### 💬 서비스 기획 배경
 ---
